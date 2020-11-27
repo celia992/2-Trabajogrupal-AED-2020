@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h> 
-principal ()
+
 struct Fecha
+
 
 {
 
