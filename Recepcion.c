@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h> 
-main()
+principal ()
+struct Fecha
+
+{
+
+	int dd;
+	int mm;
+
+	int aaaa;
+
+};
 
 {
 	
