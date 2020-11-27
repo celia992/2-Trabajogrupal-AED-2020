@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
-main()
+typedef char cadena[80];
+
+
+
+struct Fecha
 
 {
 
