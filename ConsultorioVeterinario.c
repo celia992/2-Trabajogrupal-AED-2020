@@ -16,3 +16,12 @@ struct turnos{
 	int MatriculaVet,dni;
 	struct Fecha fecha;
 	chart DetAt[380]
+}tur;
+
+struct Consultorio{
+	char ApellidoNombre[60],Telefono[25}
+         int Matricula,Dni;
+					 }cons;
+
+
+
