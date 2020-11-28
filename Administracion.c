@@ -17,5 +17,5 @@ main()
 {
 	
 	
-} //Espacio de Administración //
+}  /Espacio de Administración /
 
