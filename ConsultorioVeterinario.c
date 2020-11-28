@@ -19,8 +19,11 @@ struct turnos{
 }tur;
 
 struct Consultorio{
-	char ApellidoNombre[60],Telefono[25]
+	char ApellidoNombre[60],Telefono[25];
          int Matricula,Dni;
+	
+	
+	
 					 }cons;
 
 
