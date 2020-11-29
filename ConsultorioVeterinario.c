@@ -21,10 +21,10 @@ struct turnos{
 struct Consultorio{
 	char ApellidoNombre[60],Telefono[25];
          int Matricula,Dni;
-	
-	
-	
-					 }cons;
+ }cons;
 
+struct FechaNacimiento{
+	int dd,mm,aa;
+}fech;
 
 
