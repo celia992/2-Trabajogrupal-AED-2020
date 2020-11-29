@@ -6,7 +6,7 @@
 FILE*Turnos;
 FILE*Mascotas;
 
-
+//esta pate es la estructutura del Modulo consultorio P.B
 
 struct Fecha{
 	int dd,mm,aa;
