@@ -27,4 +27,9 @@ struct FechaNacimiento{
 	int dd,mm,aa;
 }fech;
 
-
+struct Mascota{
+	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
+	int Dni;
+	struct FechaNacimiento fech;
+	float Peso;
+}mascot;
