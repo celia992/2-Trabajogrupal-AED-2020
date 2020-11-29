@@ -33,3 +33,7 @@ struct Mascota{
 	struct FechaNacimiento fech;
 	float Peso;
 }mascot;
+
+int 
+char 
+
