@@ -37,3 +37,6 @@ struct Mascota{
 int 
 char 
 
+void 
+
+
