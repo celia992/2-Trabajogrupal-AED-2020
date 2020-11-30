@@ -37,6 +37,6 @@ struct Mascota{
 int 
 char 
 
-void 
+void ModuloConsultorio();
 
 
