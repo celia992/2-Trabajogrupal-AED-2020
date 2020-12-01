@@ -55,7 +55,7 @@ int main(){
 
 void Menu()
 {
-	system("color 5");
+	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
 	system("cls");
 	
 	printf("Modulo Consultorio Veterinario");
