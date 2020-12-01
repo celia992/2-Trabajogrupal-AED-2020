@@ -53,20 +53,22 @@ int main(){
 				ModuloConsultorio();
 			break;}
 
-int Menu()
+void Menu()
 {
-	int opcion = 0;
+	system("color 5");
+	system("cls");
 	
 	printf("Modulo Consultorio Veterinario");
 	printf("\n----\n");
-	
-	printf("\n1- Visualizar lista de espera de Turnos");
-	printf("\n2- Registrar evolución de la mascota");
-
-	printf("\n0- Cerrar la aplicacion ");
-	printf("\n\nOpcion: ");
+	printf("\n 1 - Iniciar Sesion");
+	printf("\n 2 - Visualizar Lista de Espera de Turnos");
+	printf("\n 3 - Registrar Evolución de la Mascota");
+        printf("\n 4 - Cerrar la aplicacion ");
+	printf("\n\n Ingrese una opcion: ");
 	scanf("%d", &opcion);
 	
 	return opcion;
 }
 
+				
+	
