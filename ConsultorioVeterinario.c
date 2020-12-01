@@ -38,6 +38,8 @@ int
 char 
 
 void ModuloConsultorio();
+void MenuPrincipal();
+
 
 
 int Menu()
