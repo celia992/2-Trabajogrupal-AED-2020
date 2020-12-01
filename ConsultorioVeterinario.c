@@ -45,6 +45,13 @@ void VisualizarTurnos(FILE*turnos);
 void RegistraEvolucion(FILE*turnos); 
 
 
+int main(){
+	do{
+		MenuPrincipal();
+		switch(opp){
+			case 1:{
+				ModuloConsultorio();
+			break;}
 
 int Menu()
 {
