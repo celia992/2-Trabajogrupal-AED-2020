@@ -40,7 +40,9 @@ char
 void ModuloConsultorio();
 void MenuPrincipal();
 void Menu();
-
+void RegistrarTurnos(FILE*turnos);
+void VisualizarTurnos(FILE*turnos);
+void RegistraEvolucion(FILE*turnos); 
 
 
 
