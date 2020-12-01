@@ -34,7 +34,7 @@ struct Mascota{
 	float Peso;
 }mascot;
 
-int 
+int opc=0
 char 
 
 void ModuloConsultorio();
