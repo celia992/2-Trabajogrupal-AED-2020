@@ -40,4 +40,20 @@ char
 void ModuloConsultorio();
 
 
+int Menu()
+{
+	int opcion = 0;
+	
+	printf("Modulo Consultorio Veterinario");
+	printf("\n----\n");
+	
+	printf("\n1- Visualizar lista de espera de Turnos");
+	printf("\n2- Registrar evolución de la mascota");
+
+	printf("\n0- Cerrar la aplicacion ");
+	printf("\n\nOpcion: ");
+	scanf("%d", &opcion);
+	
+	return opcion;
+}
 
