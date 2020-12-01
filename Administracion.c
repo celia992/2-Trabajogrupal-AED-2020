@@ -9,13 +9,12 @@ struct Fecha
 	int dd;
 	int mm;
 	int aaaa;
-};
+}
 
 
-main()
-
-{
-	
-	
-}  /Espacio de Administración /
-
+int Menu() 
+{ 
+	int opcion = 0; 
+	 
+	printf("Modulo administración"); 
+	printf("\n----\n");
