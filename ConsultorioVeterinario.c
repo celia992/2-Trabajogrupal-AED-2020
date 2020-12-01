@@ -39,6 +39,8 @@ char
 
 void ModuloConsultorio();
 void MenuPrincipal();
+void Menu();
+
 
 
 
