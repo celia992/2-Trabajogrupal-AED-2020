@@ -72,7 +72,7 @@ void ModuloConsultorio(){
 			char password[20],Matricula[20];
 				printf("\n Digite su numero de matricula: ");scanf("%d",&Matricula);
 				_flushall();
-				printf("\n Digite su password: ");gets(password);
+				printf("\n Digite su password: ");gets(password); //PASSWORD ES LA CONTRASEÑA 
 
 
 				
@@ -95,9 +95,9 @@ void Menu()
 	printf("\n 3 - Registrar Evolución de la Mascota");
         printf("\n 4 - Cerrar la aplicacion ");
 	printf("\n\n Ingrese una opcion: ");
-	scanf("%d", &opcion);
+	scanf("%d", &opc);
 	
-	return opcion;
+	return opc;
 }
 
 				
