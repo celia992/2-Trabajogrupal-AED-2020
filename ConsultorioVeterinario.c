@@ -91,7 +91,7 @@ void Menu()
 	printf("\n\t\t\t\t\t\t\t*********************************************************");
 	printf("\n\t\t\t\t\t\t\t**********Modulo Consultorio Veterinario*****************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t?t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\t 2 - Visualizar Lista de Espera de Turnos\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\t 3 - Registrar Evolución de la Mascota\t\t\t\t\t\t**\t");
         printf("\n\t\t\t\t\t\t\t**\t 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
