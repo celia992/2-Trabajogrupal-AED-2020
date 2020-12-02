@@ -12,10 +12,12 @@ struct mascota{
 	struct FechaNacimiento fech;
 	float Peso;
 }mascot;
+struct Turnos{
+	int MatriculaVet,dni; 
+ 	struct Fecha fecha;   
+	char DetAt[380];
+}tur;
 
-
-
-}
 int Menu()
 {
 	int opcion = 0;
