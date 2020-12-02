@@ -24,10 +24,9 @@ int Menu()
 	printf("\n 2 - Registrar Mascota");
 	printf("\n 3 - Registrar Turno");
 	printf("\n 4 - Listado de Atenciones por Veterinario y Fecha");
-
-	printf("\n0- Cerrar la aplicacion ");
-	printf("\n\nOpcion: "); 
-	scanf("%d", &opcion);
+        printf("\n 0 - Cerrar la aplicacion ");
+	printf("\n\n Ingrese una opcion:: "); 
+	scanf("%d", &opc);
 	
-	return opcion;
+	return opc;
 }
