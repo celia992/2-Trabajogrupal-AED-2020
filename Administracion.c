@@ -12,17 +12,17 @@ struct Fecha
 
 int Menu() 
 { 
-	int opcion = 0; 
+	int opc = 0; 
 	 
-	printf("Modulo administración"); 
+	printf("Modulo Administración"); 
 	printf("\n----\n");
-        printf("\n1- Registrar veterinario"); 
-	printf("\n2- Registrar usuario asistente"); 
-	printf("\n3- Atenciones por veterinarios"); 
-	printf("\n4- Ranking de veterinarios por atenciones"); 
-	printf("\n0- Cerrar la aplicacion "); 
-	printf("\n\nOpcion: "); 
-	scanf("%d", &opcion); 
+        printf("\n 1 - Registrar Veterinario"); 
+	printf("\n 2 - Registrar Usuario Asistente"); 
+	printf("\n 3 - Atenciones por Veterinarios"); 
+	printf("\n 4 - Ranking de Veterinarios por atenciones"); 
+	printf("\n 0 - Cerrar la aplicacion "); 
+	printf("\n\n Ingrese una opcion: "); 
+	scanf("%d", &opc); 
 	 
-	return opcion; 
+	return opc; 
 }
