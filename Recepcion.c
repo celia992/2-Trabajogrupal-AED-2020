@@ -7,9 +7,7 @@ struct Fecha
 
 {
 
-	int dd,mm;
-
-	int aaaa;
+	int dd,mm,aaaa;
 
 };
 struct mascota
