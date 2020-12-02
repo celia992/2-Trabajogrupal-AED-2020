@@ -7,8 +7,7 @@ struct Fecha
 
 {
 
-	int dd;
-	int mm;
+	int dd,mm;
 
 	int aaaa;
 
