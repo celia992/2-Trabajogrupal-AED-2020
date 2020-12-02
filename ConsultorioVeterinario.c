@@ -64,9 +64,21 @@ int main(){
 		}
 	}while(opp!=4);
 }
+void ModuloConsultorio(){
+	do{
+			Menu();
+			switch(opc){
+			case 1:{
 
 
-
+				
+				
+				
+				
+				
+				
+				
+				
 void Menu()
 {
 	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
