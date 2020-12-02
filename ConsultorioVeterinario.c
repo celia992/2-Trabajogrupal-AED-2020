@@ -34,8 +34,8 @@ struct Mascota{
 	float Peso;
 }mascot;
 
-int opc=0
-char 
+int opc=0,opp=0,j=0,i=0,band=0,acceso=0;
+char op;
 
 void ModuloConsultorio();
 void MenuPrincipal();
@@ -52,6 +52,7 @@ int main(){
 			case 1:{
 				ModuloConsultorio();
 			break;}
+				
 
 void Menu()
 {
