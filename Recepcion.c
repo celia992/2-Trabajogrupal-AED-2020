@@ -2,6 +2,9 @@
 #include <stdlib.h> 
 # include <string.h>
 
+FILE*turnos;
+FILE*mascotas;
+
 struct Fecha{
 int dd,mm,aaaa;	
 }fecha;
@@ -18,6 +21,13 @@ struct Turnos{
 	char DetAt[380];
 }tur;
 
+void RegistrarTurnos(FILE*turnos){
+	turnos=fopen("Turnos.dat","a+b");
+	
+	
+	
+	
+	
 int Menu()
 {
 	int opcion = 0;
