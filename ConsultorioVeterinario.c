@@ -69,6 +69,10 @@ void ModuloConsultorio(){
 			Menu();
 			switch(opc){
 			case 1:{
+			char password[20],Matricula[20];
+				printf("\n Digite su numero de matricula: ");scanf("%d",&Matricula);
+				_flushall();
+				printf("\n Digite su password: ");gets(password);
 
 
 				
