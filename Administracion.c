@@ -13,7 +13,7 @@ struct Fecha
 int Menu() 
 { 
 	int opc = 0; 
-	 printf("\n\t\t\t\t\t\**********************************************************");
+	 printf("\n\t\t\t\t\t**********************************************************");
 	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\t\t\t\t\t\t\t**\t 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
