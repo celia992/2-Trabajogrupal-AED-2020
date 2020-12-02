@@ -52,7 +52,18 @@ int main(){
 			case 1:{
 				ModuloConsultorio();
 			break;}
-				
+			case 2:{
+				//ModAsistente();
+			break;}
+			case 3:{
+				//ModAdmin();
+			break;}
+			case 4:{
+				//Mensaje de error;
+			break;}
+		}
+	}while(opp!=4);
+}
 
 void Menu()
 {
