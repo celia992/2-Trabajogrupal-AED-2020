@@ -88,13 +88,15 @@ void Menu()
 	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
 	system("cls");
 	
-	printf("Modulo Consultorio Veterinario");
-	printf("\n----\n");
-	printf("\n 1 - Iniciar Sesion");
-	printf("\n 2 - Visualizar Lista de Espera de Turnos");
-	printf("\n 3 - Registrar Evolución de la Mascota");
-        printf("\n 4 - Cerrar la aplicacion ");
-	printf("\n\n Ingrese una opcion: ");
+	printf("\n\t\t\t\t\t\t\t*********************************************************");
+	printf("\n\t\t\t\t\t\t\t**********Modulo Consultorio Veterinario*****************\n");
+	printf("\t\t\t\t\t\t\t**********************************************************\n");
+	printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t?t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\t 2 - Visualizar Lista de Espera de Turnos\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\t 3 - Registrar Evolución de la Mascota\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\t 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\t\t\t\t\t\t\t**********************************************************\n");
+	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
 	scanf("%d", &opc);
 	
 	return opc;
