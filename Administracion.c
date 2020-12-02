@@ -6,8 +6,7 @@ typedef char cadena[80];
 
 struct Fecha
 {
-	int dd;
-	int mm;
+	int dd, mm;
 	int aaaa;
 }
 
