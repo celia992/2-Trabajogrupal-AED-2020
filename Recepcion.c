@@ -2,17 +2,19 @@
 #include <stdlib.h> 
 # include <string.h>
 
-struct Fecha
+struct Fecha{
+int dd,mm,aaaa;	
+}fecha;
+
+struct mascota{
+	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
+	int Dni;
+	struct FechaNacimiento fech;
+	float Peso;
+}mascot;
 
 
-{
 
-	int dd,mm,aaaa;
-
-};
-struct mascota
-{
-	
 }
 int Menu()
 {
