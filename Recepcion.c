@@ -2,7 +2,17 @@
 #include <stdlib.h> 
 # include <string.h>
 
+
+typedef char cadena[32];
+
+bool validarPass(cadena pass);
+
+bool validarConsecutivasPass(cadena pass);
+
 FILE*turnos;
+
+
+
 FILE*mascotas;
 
 struct Fecha{
@@ -47,3 +57,8 @@ int Menu()
 	
 	return opc;
 }
+
+	
+	
+
+	
