@@ -6,27 +6,23 @@
 FILE*turnos;
 FILE*mascotas;
 
-//esta pate es la estructutura del Modulo consultorio P.B
+//Esta parte es la structura del Modulo consultorio P.B
 
 struct Fecha{
 	int dd,mm,aa;
 }fecha;
-
 struct turnos{
 	int MatriculaVet,dni;
 	struct Fecha fecha;
-	chart DetAt[380];
+	char DetAt[380];
 }tur;
-
 struct Consultorio{
 	char ApellidoNombre[60],Telefono[25];
-         int Matricula,Dni;
- }cons;
-
+        int Matricula,Dni;
+}cons;
 struct FechaNacimiento{
 	int dd,mm,aa;
 }fech;
-
 struct Mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
 	int Dni;
@@ -43,7 +39,6 @@ void Menu();
 void RegistrarTurnos(FILE*turnos);
 void VisualizarTurnos(FILE*turnos);
 void RegistraEvolucion(FILE*turnos); 
-
 
 int main(){
 	do{
@@ -64,18 +59,17 @@ int main(){
 		}
 	}while(opp!=4);
 }
-
 void ModuloConsultorio(){
 	do{
-			Menu();
-			switch(opc){
+		Menu();
+		switch(opc){
 			case 1:{
-			char password[20],Matricula[20];
+				char password[20],Matricula[20];
 				printf("\n Digite su numero de matricula: ");scanf("%d",&Matricula);
 				_flushall();
 				printf("\n Digite su password: ");gets(password); //PASSWORD ES LA CONTRASEÑA 
 
-	break;}
+			break;}
 			case 2:{
 				if(acceso==1){
 					VisualizarTurnos(turnos);	
@@ -111,8 +105,8 @@ void ModuloConsultorio(){
 			break;}
 		}
 	}while(opc!=4);
-	void VerListaTurnos(FILE*turnos)
-	{
+}
+void VerListaTurnos(FILE*turnos){
 	rewind(turnos);
 	turnos=fopen("Turnos.dat","r+b");
 	fread(&tur,sizeof(Turnos),1,turnos);
@@ -150,8 +144,7 @@ void RegistraEvolucion(FILE*turnos){
 	}
 	fclose(turnos);
 	getch();
-}			
-				
+}						
 void VisualizarTurnos(FILE*turnos){
 	char busN[100];
 	_flushall();
@@ -177,13 +170,10 @@ void VisualizarTurnos(FILE*turnos){
 	}
 	fclose(turnos);
 	getch();
-}								
-				
-void Menu()
-{
+}											
+void Menu(){
 	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
-	system("cls");
-	
+	system("cls");	
 	printf("\n\t\t\t\t\t\t\t*********************************************************");
 	printf("\n\t\t\t\t\t\t\t**********Modulo Consultorio Veterinario*****************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
@@ -194,11 +184,8 @@ void Menu()
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
 	scanf("%d", &opc);
-	
-	
 }
-	void MenuPrincipal()
-	{
+void MenuPrincipal(){
 	system("color 5");
 	system("cls");
 	printf("   Menu principal"); 
@@ -208,7 +195,3 @@ void Menu()
  	printf("\n 4 - Cerrar la aplicacion");
  	printf("\n\n Ingrese una opcion: ");scanf("%d",&opp);
 }
-
-
-				
-	
