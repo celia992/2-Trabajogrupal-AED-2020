@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include<string.h>
 
-FILE*Turnos;
-FILE*Mascotas;
+FILE*turnos;
+FILE*mascotas;
 
 //esta pate es la estructutura del Modulo consultorio P.B
 
@@ -15,7 +15,7 @@ struct Fecha{
 struct turnos{
 	int MatriculaVet,dni;
 	struct Fecha fecha;
-	chart DetAt[380]
+	chart DetAt[380];
 }tur;
 
 struct Consultorio{
@@ -111,7 +111,8 @@ void ModuloConsultorio(){
 			break;}
 		}
 	}while(opc!=4);
-	void VerListaTurnos(FILE*turnos){
+	void VerListaTurnos(FILE*turnos)
+	{
 	rewind(turnos);
 	turnos=fopen("Turnos.dat","r+b");
 	fread(&tur,sizeof(Turnos),1,turnos);
@@ -196,7 +197,8 @@ void Menu()
 	
 	
 }
-	void MenuPrincipal(){
+	void MenuPrincipal()
+	{
 	system("color 5");
 	system("cls");
 	printf("   Menu principal"); 
