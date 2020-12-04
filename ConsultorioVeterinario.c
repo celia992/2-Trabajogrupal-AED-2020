@@ -194,8 +194,19 @@ void Menu()
 	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
 	scanf("%d", &opc);
 	
-	return opc;
+	
 }
+	void MenuPrincipal(){
+	system("color 5");
+	system("cls");
+	printf("   Menu principal"); 
+ 	printf("\n 1 - Modulo consultorio");               
+	printf("\n 2 - Modulo asistente");              
+	printf("\n 3 - Modulo administracion");
+ 	printf("\n 4 - Cerrar la aplicacion");
+ 	printf("\n\n Ingrese una opcion: ");scanf("%d",&opp);
+}
+
 
 				
 	
