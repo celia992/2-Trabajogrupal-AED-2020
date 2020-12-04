@@ -64,6 +64,7 @@ int main(){
 		}
 	}while(opp!=4);
 }
+
 void ModuloConsultorio(){
 	do{
 			Menu();
@@ -110,7 +111,45 @@ void ModuloConsultorio(){
 			break;}
 		}
 	}while(opc!=4);
-				
+	void VerListaTurnos(FILE*turnos){
+	rewind(turnos);
+	turnos=fopen("Turnos.dat","r+b");
+	fread(&tur,sizeof(Turnos),1,turnos);
+	while(!feof(turnos)){
+		printf("\n Turno %d",j+1);
+		printf("\n Matricula: %d",tur.MatriculaVet);
+		printf("\n Fecha actual: %d/%d/%d",tur.fecha.dd,tur.fecha.mm,tur.fecha.aa);
+		printf("\n Dni: %d",tur.dni);
+		j++;
+		fread(&tur,sizeof(Turnos),1,turnos);	
+	}
+	fclose(turnos);
+	getch();
+}
+void RegistraEvolucion(FILE*turnos){
+	char NombreA[20],evolucion[380];
+	system("cls");
+	_flushall();
+	printf("\n Digite el nombre de la mascota que decea registrar evolucion: ");gets(NombreA);
+	rewind(turnos);
+	rewind(mascotas);
+	turnos=fopen("Turnos.dat","r+b");
+	mascotas=fopen("Mascotas.dat","r+b");
+	fread(&tur,sizeof(Turnos),1,turnos);
+	fread(&mascot,sizeof(Mascota),1,mascotas);
+	while(!feof(turnos)){
+		while(!feof(mascotas)){
+			if(strcmp(mascot.ApellidoNombre,NombreA)==0){
+				printf("\n Digite la evolucion de la mascota %s: ",mascot.ApellidoNombre);gets(evolucion);
+				strcpy(tur.DetAt,evolucion);	
+			}
+			fread(&mascot,sizeof(Mascota),1,mascotas);
+		}
+		fread(&tur,sizeof(Consultorio),1,turnos);
+	}
+	fclose(turnos);
+	getch();
+}			
 				
 				
 				
