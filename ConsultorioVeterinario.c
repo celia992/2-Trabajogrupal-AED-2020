@@ -151,11 +151,32 @@ void RegistraEvolucion(FILE*turnos){
 	getch();
 }			
 				
-				
-				
-				
-				
-				
+void VisualizarTurnos(FILE*turnos){
+	char busN[100];
+	_flushall();
+	printf("\n Digite el nombre y apellido que decea buscar: ");gets(busN);
+	rewind(turnos);
+	rewind(mascotas);
+	turnos=fopen("Turnos.dat","r+b");
+	mascotas=fopen("Mascotas.dat","r+b");
+	fread(&tur,sizeof(Turnos),1,turnos);
+	fread(&mascot,sizeof(Mascota),1,mascotas);
+	while(!feof(turnos)){
+		while(!feof(mascotas)){
+			if(strcmp(busN,mascot.ApellidoNombre)==0){
+				printf("\n Turno %d",j+1);
+				printf("\n Matricula: %d",tur.MatriculaVet);
+				printf("\n Fecha actual: %d/%d/%d",tur.fecha.dd,tur.fecha.mm,tur.fecha.aa);
+				printf("\n Dni: %d",tur.dni);
+				j++;
+			}
+			fread(&mascot,sizeof(Mascota),1,mascotas);
+		}
+		fread(&tur,sizeof(Turnos),1,turnos);	
+	}
+	fclose(turnos);
+	getch();
+}								
 				
 void Menu()
 {
