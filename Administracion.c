@@ -38,13 +38,11 @@ int Menu()
 
 main(){
 	cadena pass;
-	
 	do{
 		printf("ingrese una password valido: ");
 		_flushall();
 		gets(pass);			
-	}while(!validarPass(pass));
-	
+	}while(!validarPass(pass));	
 	printf("pass Valido!");
 }
 
@@ -57,4 +55,6 @@ bool validarPass(cadena pass){
 		if (pass[i] >='A' && pass[i] <='Z'){
 			may++;
 			numcons = 0;		
-		} 
+		}
+	}
+}
