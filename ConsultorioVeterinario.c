@@ -74,7 +74,42 @@ void ModuloConsultorio(){
 				_flushall();
 				printf("\n Digite su password: ");gets(password); //PASSWORD ES LA CONTRASEÑA 
 
-
+	break;}
+			case 2:{
+				if(acceso==1){
+					VisualizarTurnos(turnos);	
+				}else{
+					system("cls");
+					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
+					system("pause");
+				}
+			break;}
+			case 3:{
+				if(acceso==1){
+					RegistraEvolucion(turnos);
+				}else{
+					system("cls");
+					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
+					system("pause");
+				}
+			break;}
+			case 4:{
+				if(acceso==1){
+					system("cls");
+					printf("\n Aplicacion finalizada");
+				}else{
+					system("cls");
+					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
+					system("pause");
+				}
+			break;}
+			default:{
+				system("cls");
+				printf("\n Se produjo un error solo debe ingresar las opciones que aparecen en el menu\n\n");
+				system("pause");
+			break;}
+		}
+	}while(opc!=4);
 				
 				
 				
