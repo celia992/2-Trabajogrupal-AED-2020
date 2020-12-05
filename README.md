@@ -3,12 +3,14 @@ Este proyecto corresponde al segundo trabajo grupal de la materia ALGORITMO Y ES
 
 Integrantes
 
-Garcia Olga María
-García Celia
-Puyo  Belén
-Santillan Camila
+1)   Garcia Olga María
+2)   García Celia
+3)   Puyo  Belén
+4)   Santillan Camila
 
 Dividimos el proyecto en partes
+Dividimos el proyecto en partes
+
 
 Consultorio  está a cargo de Belén
 Recepción a Cargo de  Camila
