@@ -4,8 +4,12 @@
 
 typedef char cadena[80];
 
-typedef char cadena[32];
-
+struct Veterinario
+	
+{
+	
+	
+	
 bool validarPass(cadena pass);
 
 bool validarConsecutivasPass(cadena pass);
