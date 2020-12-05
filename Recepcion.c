@@ -40,25 +40,48 @@ void RegistrarTurnos(FILE*turnos){
 	
 int Menu()
 {
-	int opcion = 5;
-	system("color 5");
+	int opcion = 0;
+
 	system("cls");
-	printf("\n\t\t\t\t\t\t\t*********************************************************");
-	printf("\n\t\t\t\t\t\t\t******************Modulo de Recepcion********************\n");
+	
+        printf("\n-----------------------------------------------------\n");
+	printf("          VETERINARIA GAPUSAGA       ");
+	printf("\n------------------------------------------------------\n");
+	printf("BIENVENIDO AL AREA RECEPCIÓN");
+	printf("presione una de las siguientes opciones para continuar");
+	printf("\n------------------------------------------------------\n");
+	
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 2 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 3 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	
+	//printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	
+	printf("\n\t\t\t\t\t\t\t**\t 1 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\t 2 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\t 3-  Pago de Contado y a Credito");
 	printf("\n\t\t\t\t\t\t\t**\t 4 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
         printf("\n\t\t\t\t\t\t\t**\t 5 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t************************************************************\n");
-	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
-	scanf("%d", &opc);
 	
-	return opc;
+	scanf("%d", &opcion);
+	
+	return opcion;
 }
 
 	
+void RegistrarTurno(FILE *archi)   
+{
+	Registro regi;
 	
+	int Mascota = 0;  
+	
+	int formaPago = 0;   
+
+	do
+	{
+		printf("\n DNIDueno: ");
+		printf("\n ingrese numeros de 6 digitos, sin puntos ");
+		scanf("%d", &Mascota);
+	
+	} while
 
 	
