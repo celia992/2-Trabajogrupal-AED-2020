@@ -62,3 +62,26 @@ void RegistrarTurnos(FILE*turnos){
 	}while(band==0);
 	fclose(turnos);
 }
+
+
+
+
+void VerListaMascotas(FILE*mascotas){
+	rewind(mascotas);
+	mascotas=fopen("Mascotas.dat","r+b");
+	fread(&mascot,sizeof(Mascota),1,mascotas);
+	while(!feof(mascotas)){
+		printf("\n\n Mascota %d",j+1);
+		printf("\n Apellido y nombre: %s",mascot.ApellidoNombre);
+		printf("\n Domicilio: %s",mascot.Domicilio);
+		printf("\n Localidad: %s",mascot.Localidad);
+		printf("\n Telefono: %s",mascot.Telefono);
+		printf("\n Dni: %d",mascot.Dni);
+		printf("\n Fecha de nacimiento %d/%d/%d",mascot.fech.dd,mascot.fech.mm,mascot.fech.aa);
+		printf("\n Peso: %.2f",mascot.Peso);	
+		j++;
+		fread(&mascot,sizeof(Mascota),1,mascotas);	
+	}
+	fclose(mascotas);
+	getch();
+}
