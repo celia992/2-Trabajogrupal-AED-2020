@@ -10,9 +10,6 @@ bool validarPass(cadena pass);
 bool validarConsecutivasPass(cadena pass);
 
 FILE*turnos;
-
-
-
 FILE*mascotas;
 
 struct Fecha{
@@ -25,6 +22,7 @@ struct mascota{
 	struct FechaNacimiento fech;
 	float Peso;
 }mascot;
+
 struct Turnos{
 	int MatriculaVet,dni; 
  	struct Fecha fecha;   
