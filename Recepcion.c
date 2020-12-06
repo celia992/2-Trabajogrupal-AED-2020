@@ -12,14 +12,17 @@ bool validarConsecutivasPass(cadena pass);
 FILE*turnos;
 FILE*mascotas;
 
-struct Fecha{
-int dd,mm,aaaa;	
-}fecha;
+struct Fecha
+{
+int dd,
+int mm;
+int aaaa;	
+};
 
 struct mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
-	int Dni;
-	struct FechaNacimiento fech;
+	int Dnidueno;
+	Fecha FechaNacimiento;
 	float Peso;
 }mascot;
 
@@ -79,8 +82,17 @@ void RegistrarTurno(FILE *archi)
 		printf("\n DNIDueno: ");
 		printf("\n ingrese numeros de 6 digitos, sin puntos ");
 		scanf("%d", &Mascota);
-	
+		
+	if  //(mascota)    -preguntar a los profes por esta condicion
+	{break;
+	}
+		printf("Error. Solo valores de 6 digitos sin puntos \n\n");
+		
 	} while
+		
+	printf("Nombre de la mascota ");
+	_flushall();
+        gets
 
 	main()
 
