@@ -53,11 +53,11 @@ int Menu()
 	
 	//printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 2 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\t 3-  Pago de Contado y a Credito");
-	printf("\n\t\t\t\t\t\t\t**\t 4 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\t 5 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 3-  Pago de Contado y a Credito");
+	printf("\n\t\t\t\t\t\t\t**\n 4 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 5 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t************************************************************\n");
 	
 	scanf("%d", &opcion);
@@ -82,4 +82,13 @@ void RegistrarTurno(FILE *archi)
 	
 	} while
 
+	main()
+
+{
 	
+	FILE *archivo;
+	
+	int opc = 0;
+
+	int mes = 0;
+} 
