@@ -30,7 +30,14 @@ struct Veterinario
 int Menu() 
 { 
 	int opc = 0; 
-	 printf("\n\t\t\t\t\t**********************************************************");
+
+        	system ( " cls " );
+	
+        printf ( " \ n --------------------------------------------- -------- \ n " );
+	printf ( "           VETERINARIA GAPUSAGA        " );
+	printf ( " \ n --------------------------------------------- --------- \ n " );
+	printf ( " BIENVENIDO AL AREA RECEPCIÓN " );
+	printf("\n\t\t\t\t\t**********************************************************");
 	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
