@@ -13,16 +13,21 @@ bool validarConsecutivasPass(cadena pass);
 
 struct Fecha
 {
-	int dd, mm, aaaa;
+	int dd;
+	int mm;
+	int aaaa;
 }
 
 struct Veterinario
 	
 {
-     int matricula;
-     int
+     char matricula;
+     int DNI;
+     char [25] ApellidoNobre;
+     Fecha fechaturno;
      
 }
+
 
 int Menu() 
 
@@ -50,7 +55,15 @@ int Menu()
 	return opc; 
 }
 
-main(){
+main()
+
+{
+	
+	FILE *archivo;
+        archivo = fopen("Veterinario.dat", "r+b");
+}
+
+{
 	cadena pass;
 	
 do{
