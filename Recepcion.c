@@ -21,7 +21,7 @@ int aaaa;
 
 struct mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
-	int Dnidueno;
+	int DNIdueno;
 	Fecha FechaNacimiento;
 	float Peso;
 }mascot;
@@ -34,9 +34,6 @@ struct Turnos{
 
 void RegistrarTurnos(FILE*turnos){
 	turnos=fopen("Turnos.dat","a+b");
-	
-	
-	
 	
 	
 int Menu()
@@ -88,11 +85,27 @@ void RegistrarTurno(FILE *archi)
 	}
 		printf("Error. Solo valores de 6 digitos sin puntos \n\n");
 		
-	} while
+	} while (true)
+		
+		 regi.DNIdueno = Mascota;
 		
 	printf("Nombre de la mascota ");
 	_flushall();
         gets
+		
+	printf("Numero Factura: ");
+	scanf("%d", &regi.nroPago);
+	
+	printf("Importe Factura: ");
+	scanf("%f", &regi.importePago);
+	
+	do
+	{
+	
+		if
+		{
+		}
+	} While
 
 	main()
 
@@ -103,4 +116,8 @@ void RegistrarTurno(FILE *archi)
 	int opc = 0;
 
 	int mes = 0;
+		
+	cadena nombreMascota;
+		
+	archivo = fopen(" ")
 } 
