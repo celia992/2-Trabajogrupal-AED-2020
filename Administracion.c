@@ -25,14 +25,15 @@ struct Veterinario
 }
 
 int Menu() 
+
 { 
 	int opc = 0; 
 
-        	system ( " cls " );
+        system ( " cls " );
 	
-        printf ( " \ n ---------------------------------------------------- \ n " );
+        printf ( " \n ---------------------------------------------------- \ n " );
 	printf ( "           VETERINARIA GAPUSAGA        " );
-	printf ( " \ n ------------------------------------------------------ \ n " );
+	printf ( " \n ------------------------------------------------------ \ n " );
 	printf ( " BIENVENIDO AL AREA ADMINISTRACIÓN " );
 	printf("\n\t\t\t\t\t**********************************************************");
 	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
@@ -43,7 +44,7 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
         printf("\n\t\t\t\t\t\t\t**\n 5 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
-	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese una opcion: ");
+	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
 	scanf("%d", &opc); 
 	 
 	return opc; 
@@ -56,7 +57,8 @@ do{
 		printf("ingrese una password valido: ");
 		_flushall();
 		gets(pass);			
-	}while(!validarPass(pass));	
+	}
+while(!validarPass(pass));	
 	printf("pass Valido!");
 }
 
