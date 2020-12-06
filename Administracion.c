@@ -4,9 +4,6 @@
 
 typedef char cadena[80];
 
-
-	
-	
 	
 bool validarPass(cadena pass);
 
@@ -33,10 +30,10 @@ int Menu()
 
         	system ( " cls " );
 	
-        printf ( " \ n --------------------------------------------- -------- \ n " );
+        printf ( " \ n ---------------------------------------------------- \ n " );
 	printf ( "           VETERINARIA GAPUSAGA        " );
-	printf ( " \ n --------------------------------------------- --------- \ n " );
-	printf ( " BIENVENIDO AL AREA RECEPCIÓN " );
+	printf ( " \ n ------------------------------------------------------ \ n " );
+	printf ( " BIENVENIDO AL AREA ADMINISTRACIÓN " );
 	printf("\n\t\t\t\t\t**********************************************************");
 	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
@@ -54,7 +51,8 @@ int Menu()
 
 main(){
 	cadena pass;
-	do{
+	
+do{
 		printf("ingrese una password valido: ");
 		_flushall();
 		gets(pass);			
