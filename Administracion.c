@@ -4,9 +4,7 @@
 
 typedef char cadena[80];
 
-struct Veterinario
-	
-{
+
 	
 	
 	
@@ -21,6 +19,13 @@ struct Fecha
 	int dd, mm, aaaa;
 }
 
+struct Veterinario
+	
+{
+     int matricula;
+     int
+     
+}
 
 int Menu() 
 { 
@@ -28,13 +33,13 @@ int Menu()
 	 printf("\n\t\t\t\t\t**********************************************************");
 	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 2 - Registrar Usuario Asistente \t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
-        printf("\n\t\t\t\t\t\t\t**\t 5 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Usuario Asistente \t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
+        printf("\n\t\t\t\t\t\t\t**\n 5 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
-	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
+	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese una opcion: ");
 	scanf("%d", &opc); 
 	 
 	return opc; 
