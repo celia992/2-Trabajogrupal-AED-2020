@@ -92,7 +92,8 @@ void RegistrarMascotas(FILE*mascotas){
 			band=1;
 		}
 	}while(band==0);
-	
+		fclose(mascotas);
+}
 	
 	
 void RegistrarTurno(FILE *archi)   
