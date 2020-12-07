@@ -25,9 +25,11 @@ struct Veterinario
      int DNI;
      char [25] ApellidoNobre;
      Fecha fechaturno;
-     
+     chat nombreyapMasc;
+
 }
 
+void registrarTurnoMensual(FILE*arch1, int cantTurnos);
 
 int Menu() 
 
