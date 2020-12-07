@@ -83,8 +83,8 @@ void RegistrarMascotas(FILE*mascotas){
 		printf(" -A%co: ",164);scanf("%d",&mascot.fech.aa);
 		printf("\n Digite el peso: ");scanf("%f",&mascot.Peso);	
 		fwrite(&mascot,sizeof(Mascota),1,mascotas);
-		_flushall();
-		printf("\n Decea registrar mas mascotas(s/n)(S/N): ");scanf("%c",&op);
+		flushall();
+		printf("\n Desea registrar mas mascotas(s/n)(S/N): ");scanf("%c",&op);
 		if(op=='s'||op=='S'){
 			band=0;
 			i++;
@@ -94,7 +94,8 @@ void RegistrarMascotas(FILE*mascotas){
 	}while(band==0);
 		fclose(mascotas);
 }
-	
+void RegistrarTurnos(FILE*turnos){
+	turnos=fopen("Turnos.dat","a+b");	
 	
 void RegistrarTurno(FILE *archi)   
 {
