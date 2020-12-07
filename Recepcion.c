@@ -96,7 +96,27 @@ void RegistrarMascotas(FILE*mascotas){
 }
 void RegistrarTurnos(FILE*turnos){
 	turnos=fopen("Turnos.dat","a+b");	
-	
+		do{
+		system("cls");
+		printf("\n Turno %d",i+1);
+		printf("\n Digite la matricula del veterinario: ");scanf("%d",&tur.MatriculaVet);
+		printf("\n Digite la fecha actual \n");
+		printf(" -Dia: ");scanf("%d",&tur.fecha.dd);
+		printf(" -Mes: ");scanf("%d",&tur.fecha.mm);
+		printf(" -A%co: ",164);scanf("%d",&tur.fecha.aa);
+		printf("\n Digite el dni del due%co: ",164);scanf("%d",&tur.dni);
+		fwrite(&tur,sizeof(Turnos),1,turnos);
+		_flushall();
+		printf("\n Decea registrar mas turnos(s/n)(S/N): ");scanf("%c",&op);
+		if(op=='s'||op=='S'){
+			band=0;
+			i++;
+		}else if(op=='n'||op=='N'){
+			band=1;
+		}
+	}while(band==0);
+	fclose(turnos);
+}
 void RegistrarTurno(FILE *archi)   
 {
 	Registro regi;
