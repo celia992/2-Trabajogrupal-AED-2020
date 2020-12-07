@@ -29,7 +29,8 @@ struct Veterinario
 
 }
 
-void registrarTurnoMensual(FILE*arch1, int cantTurnos);
+void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
+int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
 
 int Menu() 
 
@@ -63,6 +64,9 @@ main()
 	
 	FILE *archivo;
         archivo = fopen("Veterinario.dat", "r+b");
+		if (archivo == NULL)
+	{
+		}
 }
 
 {
