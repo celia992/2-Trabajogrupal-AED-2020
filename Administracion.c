@@ -69,6 +69,17 @@ main()
 		}
 }
 
+float CalcularTurnosMEs(File*arch, int mesTarget)
+{
+    float total = 0.0
+    Registro regi;
+    rewind(archi);
+    fread(&regi, sizeof(regi), 1, archi)
+ while (feof(archi))
+{
+
+
+
 {
 	cadena pass;
 	
