@@ -58,6 +58,33 @@ int Menu()
 	return opc; 
 }
 
+}
+
+float CalcularTurnosMes(File*arch, int mesTarget) //para hacer el Ranking
+{
+    float total = 0.0
+
+    Registro regi;
+
+    rewind(archi); //Paso 1 Rebobinar el archivo
+
+    fread(&regi, sizeof(regi), 1, archi); // Paso 2 Intentar extraer el primer registro de archivo
+
+ while (!feof(archi)) //Paso 3 mientras no sea FIN DE ARCHIVO
+{
+     if (regi.borrado == false) //Paso 4 - Procesar /  Gestionar el registro actual
+      { 
+        if (regi.fechaTurno.mm== mesTarget)
+         {
+           total = total + regi.importeFactura;
+         }
+      }
+
+      fread (&regi, sizeof(regi), 1, archi); Paso 5 intentar extraer el SIGUIENTE registro de archivo
+}
+
+
+
 main()
 
 {
@@ -67,17 +94,6 @@ main()
 		if (archivo == NULL)
 	{
 		}
-}
-
-float CalcularTurnosMEs(File*arch, int mesTarget)
-{
-    float total = 0.0
-    Registro regi;
-    rewind(archi);
-    fread(&regi, sizeof(regi), 1, archi)
- while (feof(archi))
-{
-
 
 
 {
