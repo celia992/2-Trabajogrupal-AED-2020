@@ -1,9 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>    //puts, scanf, printf, y otras funciones
+#include <stdlib.h>   //sytem(..) y otras funciones 
+#include <string.h>   //strcpy, strlwr, stren, strcat, strcat y otras funciones 
 
-typedef char cadena[80];
+*---Define un nuevo tipo de dato. De tipo global, asi se utiliza en todas las funciones que la necesite*/
 
+typedef char cadena[80]; //Define un vector de 80. Almacena apellido y nombre.
 	
 bool validarPass(cadena pass);
 
