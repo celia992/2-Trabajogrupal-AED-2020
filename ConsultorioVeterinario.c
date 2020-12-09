@@ -3,6 +3,10 @@
 #include<stdlib.h>
 #include<string.h>
 
+typedef char cadena[80];
+bool validarPass(cadena pass);
+bool validarConsecutivasPass(cadena pass);
+
 FILE*turnos;
 FILE*mascotas;
 
