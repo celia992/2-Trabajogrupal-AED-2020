@@ -1,10 +1,12 @@
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
+#include<stdio.h> //puts , gets, scanf, printf, y otras funciones
+#include<conio.h> 
+#include<stdlib.h> //system(..) y otras funciones
 #include<string.h>
 
-typedef char cadena[80];
-bool validarPass(cadena pass);
+typedef char cadena[80];.  // Define un nuevo tipo de dato
+
+
+bool validarPass(cadena pass); //para la validación de la contraseña, ya veremos
 bool validarConsecutivasPass(cadena pass);
 
 FILE*turnos;
@@ -44,7 +46,9 @@ void RegistrarTurnos(FILE*turnos);
 void VisualizarTurnos(FILE*turnos);
 void RegistraEvolucion(FILE*turnos); 
 
-int main(){
+
+//Revisa aquí Belen porque tenés 2 veces lo mismo
+int main(){ 
 	do{
 		MenuPrincipal();
 		switch(opp){
@@ -56,6 +60,7 @@ int main(){
 			break;}
 			case 3:{
 				//ModAdmin();
+   
 			break;}
 			case 4:{
 				//Mensaje de error;
@@ -135,6 +140,8 @@ while(!validarPass(pass));
 	printf("pass Valido!");
 }
 
+//Para validar , estamos trabajando en esto
+
 //"dA122dAoPFmk"
 
 bool validarPass(cadena pass){
@@ -198,6 +205,7 @@ void VisualizarTurnos(FILE*turnos){
 	getch();
 }											
 void Menu(){
+
 	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
 	system("cls");	
 	printf("\n\t\t\t\t\t\t\t*********************************************************");
