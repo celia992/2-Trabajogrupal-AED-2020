@@ -2,7 +2,7 @@
 #include <stdlib.h>   //sytem(..) y otras funciones 
 #include <string.h>   //strcpy, strlwr, stren, strcat, strcat y otras funciones 
 
-*---Define un nuevo tipo de dato. De tipo global, asi se utiliza en todas las funciones que la necesite*/
+/*---Define un nuevo tipo de dato. De tipo global, asi se utiliza en todas las funciones que la necesite*/
 
 typedef char cadena[80]; //Define un vector de 80. Almacena apellido y nombre.
 	
