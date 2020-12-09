@@ -3,9 +3,9 @@
 # include <string.h>
 
 
-typedef char cadena[32];
+typedef char cadena[80]; //cambio 32 por 80 que es el mayor tamaño de consola
 
-bool validarPass(cadena pass);
+bool validarPass(cadena pass); //para validar la contraseña, estamos trabajando en esto
 
 bool validarConsecutivasPass(cadena pass);
 
@@ -18,8 +18,8 @@ int dd,mm,aaaa;
 
 struct mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
-	int Dni;
-	struct FechaNacimiento fech;
+	int DNIdueno;  //vuelvo a escribir DNIdueño porque en el programa apareceran también el DNI del veterinario, así diferenciamos.
+	struct FechaNacimiento fech;. // Revisemos esto de DNI para ver cuál es la forma más adecuada 
 	float Peso;
 }mascot;
 
@@ -136,7 +136,7 @@ void VerListaMascotas(FILE*mascotas){
 	fclose(mascotas);
 	getch();
 }
-void RegistrarTurno(FILE *archi)   
+void RegistrarTurno(FILE *archi)   // Camila, aquí ya te había realizado la introducción para registrar turno.
 {
 	Registro regi;
 	
