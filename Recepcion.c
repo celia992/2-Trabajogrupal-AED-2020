@@ -195,6 +195,12 @@ main ()
             printf ("Opcion incorrecta")
             break;
           }
-}; // Switch
+   }; // Switch
+
+   printf("\n\n");
+   system( opc != 0);
+
+  } while (opc != 0);
+}
 
 	
