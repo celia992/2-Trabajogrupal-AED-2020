@@ -2,6 +2,7 @@
 #include<conio.h> 
 #include<stdlib.h> //system(..) y otras funciones
 #include<string.h>
+# include "Clave.h" //Libreria para Contraseña
 
 typedef char cadena[80];.  // Define un nuevo tipo de dato
 
