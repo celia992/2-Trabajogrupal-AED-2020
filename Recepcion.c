@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> 
 # include <string.h>
+# include "Clave.h" //Libreria para Contraseña
 
 
 typedef char cadena[80]; //cambio 32 por 80 que es el mayor tamaño de consola
