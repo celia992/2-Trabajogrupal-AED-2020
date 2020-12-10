@@ -1,6 +1,9 @@
 #include <stdio.h>    //puts, scanf, printf, y otras funciones
 #include <stdlib.h>   //sytem(..) y otras funciones 
 #include <string.h>   //strcpy, strlwr, stren, strcat, strcat y otras funciones 
+# include "Clave.h" //Libreria para Contraseña
+
+
 
 /*---Define un nuevo tipo de dato. De tipo global, asi se utiliza en todas las funciones que la necesite*/
 
