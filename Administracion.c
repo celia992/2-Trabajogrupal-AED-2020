@@ -33,6 +33,16 @@ struct Veterinario
 
 }
 
+struct Asistente
+{
+	char Asis[10];
+	char ContraseniAsis[10];
+	char ApellyNomAsis[60];
+	char TelefonoAsis[25];
+	int DNIasis;
+	
+};
+
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
 int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
 
