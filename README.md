@@ -32,4 +32,12 @@ Publicaciones en el README
 CASO BOTELLA
 
 Chicas
-Nos tenemos que poner de acuerdo en usar el mismo REGISTRO, mismo CAMPO.
+
+∆ Nos tenemos que poner de acuerdo en usar el mismo REGISTRO, mismo CAMPO.
+
+
+BITÁCORA DEL PROYECTO
+Reunión grupal Zoom 04/12
+Reunión grupal Zoom 06/12
+
+✓Menu listo en los 3 módulos
