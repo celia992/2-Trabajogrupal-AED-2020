@@ -23,4 +23,13 @@ NORMAS DE CONVIVENCIA PARA CREAR EL CÓDIGO EN ARMONÍA
 Cada una puede crear , escribir principlmente en la parte  que le tocó, incluso borrar si considera que puede plantearse de mejor forma el código
 Tambien puede colaborar y ayudar en otras partes , sin embargo TRATE EN LO POSIBLE DE NO BORRAR, haga comentarios pregunte por el grupo antes de borrar.
 
+MEDIOS DE COMUNICACIÓN
+Grupo de WhatsApp
+Por el github, en los comentarios que nos podemos dejar en algunas partes del código
+Publicaciones en el README
 
+
+CASO BOTELLA
+
+Chicas
+Nos tenemos que poner de acuerdo en usar el mismo REGISTRO, mismo CAMPO.
