@@ -96,6 +96,54 @@ main()
 	{
 		}
 
+  main ()
+{
+  int opc = 0;
+  do
+  {
+    system ("cls");
+    opc = menu ();
+    system ("cls");
+    
+    swich (opc)
+    { 
+    case 1:
+          {
+            printf ("Registrar Veterinario");
+            break;
+          }
+   case 2:
+          {
+            printf ("Registrar Usuario Asistente");
+            break;
+          }
+    
+   case 3:
+          {
+            printf ("Atencion por Veterinarios");
+            break;
+          }
+   case 4:
+          {
+            printf ("Ranking de Veterinario por Atenciones")
+            break;
+          }
+   case 0:
+          {
+            printf ("Cerrar la aplicacion");
+            break;
+          }
+   default:
+          {
+            printf ("Opcion incorrecta")
+            break;
+          }
+}; // Switch
+       printf("\n\n");
+       system("pause");
+}
+  while(opc !=0);
+
 
 {
 	cadena pass;
