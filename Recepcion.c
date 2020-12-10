@@ -151,5 +151,50 @@ void RegistrarTurno(FILE *archi)   // Camila, aquí ya te había realizado la in
 		scanf("%d", &Mascota);
 	
 	} while
+}
+
+main ()
+{
+  int opc = 0;
+  do
+  {
+    system ("cls");
+    opc = menu ();
+    system ("cls");
+    
+    swich (opc)
+    { 
+    case 1:
+          {
+            printf ("Iniciar Sesion");
+            break;
+          }
+   case 2:
+          {
+            printf ("Registrar Mascota");
+            break;
+          }
+    
+   case 3:
+          {
+            printf ("Registrar Turno");
+            break;
+          }
+   case 4:
+          {
+            printf ("Listado de atenciones por Veterinario y fecha")
+            break;
+          }
+   case 0:
+          {
+            printf ("Cerrar la aplicacion");
+            break;
+          }
+   default:
+          {
+            printf ("Opcion incorrecta")
+            break;
+          }
+}; // Switch
 
 	
