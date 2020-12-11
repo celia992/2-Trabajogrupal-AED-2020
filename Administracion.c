@@ -25,11 +25,14 @@ struct Fecha
 struct Veterinario
 	
 {
-     char matricula;
-     int DNI;
-     char [25] ApellidoNobre;
-     Fecha fechaturno;
-     chat nombreyapMasc;
+     char Matricula;
+     char ContraseniaVet[10];
+     int DNIVet;
+     char ApellyNomVet[60];
+     char TelefonoVet[25];
+     //Fecha fechaturno;
+     //chat nombreyapMasc;
+     bool borrado;
 
 }
 
@@ -37,11 +40,26 @@ struct Asistente
 {
 	char Asis[10];
 	char ContraseniAsis[10];
-	char ApellyNomAsis[60];
-	char TelefonoAsis[25];
 	int DNIasis;
-	
+	char ApellyNomAsis[60];
+	char TelefonoAsis[25];	
 };
+
+void AgregarVeterinario(FILE *archi)  //ALTA
+{
+	Veterinario regi; //regi es la variable  de tipo struc
+	
+	printf("MATRICULA del Veterinario: ");
+	scanf("%d", &regi.Matricula);
+	
+	printf("Contraseña  del Veterinario: ");
+	_flushall();
+	gets ( regi.ContraseniaVet);
+	
+}
+
+
+
 
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
 int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
