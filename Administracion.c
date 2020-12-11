@@ -74,15 +74,15 @@ int Menu()
         printf ( " \n ---------------------------------------------------- \ n " );
 	printf ( "           VETERINARIA GAPUSAGA        " );
 	printf ( " \n ------------------------------------------------------ \ n " );
-	printf ( " BIENVENIDO AL AREA ADMINISTRACIÓN " );
 	printf("\n\t\t\t\t\t**********************************************************");
-	printf("\n\t\t\t\t\t\t***************Modulo Administración**********************\n");
+	printf("\n\t\t\t\t\t\t**************  BIENVENIDO AL AREA ADMINISTRACIÓN  *******************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Usuario Asistente \t\t\t\t\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
-        printf("\n\t\t\t\t\t\t\t**\n 5 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
 	scanf("%d", &opc); 
@@ -122,25 +122,47 @@ main()
 {
 	
 	FILE *archivo;
-        archivo = fopen("Veterinario.dat", "r+b");
-		if (archivo == NULL)
+        
+	int opc = 0;
+	
+	archivo = fopen("Veterinario.dat", "r+b");
+		
+	if (archivo == NULL)
 	{
+		printf("El archivo no existe, se intentara crearlo...");
+		
+		archivo = fopen("Veterinario.dat", "w+b");
+		
+		if   (archivo == NULL)
+		{
+		    printf("Error. No se pudo crear el archivo...");
+		    exit(1);
 		}
+		
+		printf("\nArchivo creado exitosamente...\n\n");
+		system("pause");
+	}
+	
+		
+        }
 
-  main ()
-{
-  int opc = 0;
+ 
+
+  
   do
   {
     system ("cls");
     opc = menu ();
     system ("cls");
     
-    swich (opc)
+    swich ( opc )
+	    
     { 
     case 1:
           {
             printf ("Registrar Veterinario");
+	    AgregarVeterinario (archivo);  
+            
             break;
           }
    case 2:
@@ -157,6 +179,11 @@ main()
    case 4:
           {
             printf ("Ranking de Veterinario por Atenciones")
+            break;
+          }
+   case 5:
+          {
+            printf ("Listado de Veterinarios Registrados  ")
             break;
           }
    case 0:
