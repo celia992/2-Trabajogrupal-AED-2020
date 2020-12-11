@@ -43,4 +43,5 @@ Reunión Grupal Teams 10/12
 Reunión Grupal Zoom 11/12
 
 ✓Menu listo en los 3 módulos
+
 ✓ALTA de VETERINARIO y ASISTENTE
