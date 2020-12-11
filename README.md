@@ -33,13 +33,14 @@ CASO BOTELLA
 
 Chicas
 
-∆ Nos tenemos que poner de acuerdo en usar el mismo REGISTRO, mismo CAMPO.
+∆ Trabajar en USUARIO y CONTRASEÑA
 
 
 BITÁCORA DEL PROYECTO
 Reunión grupal Zoom 04/12
 Reunión grupal Zoom 06/12   
 Reunión Grupal Teams 10/12
+Reunión Grupal Zoom 11/12
 
 ✓Menu listo en los 3 módulos
-Registro de VETERINARIO y ASISTENTE
+✓ALTA de VETERINARIO y ASISTENTE
