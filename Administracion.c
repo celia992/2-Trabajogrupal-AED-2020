@@ -43,7 +43,9 @@ struct Asistente
 	int DNIasis;
 	char ApellyNomAsis[60];
 	char TelefonoAsis[25];	
+	bool borradoA;
 };
+
 
 void AgregarVeterinario(FILE *archi)  //ALTA
 {
@@ -56,9 +58,19 @@ void AgregarVeterinario(FILE *archi)  //ALTA
 	_flushall();
 	gets ( regi.ContraseniaVet);
 	
+	printf("Apellido y Nombre del Veterinario: ");
+	gets ( regi.ApellyNomVet);
+	
+	regi.borrado= false;
+	
+	fseek (archi, 0, SEEK_END);
 }
 
+void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
+{
+	Asistente registro; //regi es la variable  de tipo struc
 
+}
 
 
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
@@ -82,6 +94,7 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
         printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Asistentes\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
