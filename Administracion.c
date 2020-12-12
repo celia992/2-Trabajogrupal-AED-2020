@@ -101,7 +101,8 @@ void AgregarVeterinario(FILE *archi)  //ALTA DEL VETERINARIO
 void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 {
 	Asistente registro; //regi es la variable  de tipo struc
-		printf("DNI del Asistente: ");
+	
+	printf("DNI del Asistente: ");
 	scanf("%d", &registro.DNIAsis);
 	
 	printf("Contraseña  del Asistente: ");
@@ -110,6 +111,15 @@ void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 	
 	printf("Apellido y Nombre del Asistente: ");
 	gets ( registro.ApellyNomAsis);
+	
+	printf("Telefono ");
+	gets(registro.TelefonoAsis);
+	
+	registro.borradoA= false;
+	
+	fseek (archiv, 0, SEEK_END);
+	fwrite (&registro, sizeof(registro), 1, archiv);
+	//confirmacion
 
 }
 
@@ -155,6 +165,12 @@ void ListarAsistente(FILE *archiv)
 	//Paso 1 - Rebobinar el archivo
 	rewind(archiv);
 	//fseek(archi, 0, SEEK_SET);
+		//Paso 2 - Intentar extraer el primer registro del archivo
+	fread(&registro, sizeof(registro), 1, archiv);
+	
+	//Paso 3 - Mientras no sea FIN DE ARCHIVO
+	while ( !feof(archiv) )
+	
 }
 
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
