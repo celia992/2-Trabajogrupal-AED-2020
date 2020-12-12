@@ -17,11 +17,19 @@ struct Fecha{
 int dd,mm,aaaa;	
 }fecha;
 
+struct Historial
+{    
+    char  Evolucion;
+    Fecha FechTurno;
+};
+
 struct mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
 	int DNIdueno;  //vuelvo a escribir DNIdueño porque en el programa apareceran también el DNI del veterinario, así diferenciamos.
 	struct FechaNacimiento fech;. // Revisemos esto de DNI para ver cuál es la forma más adecuada 
 	float Peso;
+	bool borradoA;
+	
 }mascot;
 
 struct Turnos{
@@ -66,7 +74,8 @@ int Menu()
 	return opcion;
 }
 void RegistrarMascotas(FILE*mascotas){
-	mascotas=fopen("Mascotas.dat","a+b");	do{
+	mascotas=fopen("Mascotas.dat","a+b");	
+	do{
 		system("cls");
 		printf("\n Mascota %d",i+1);
 		_flushall();
