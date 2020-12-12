@@ -30,24 +30,48 @@ struct Veterinario
      int DNIVet;
      char ApellyNomVet[60];
      char TelefonoVet[25];
-     //Fecha fechaturno;
-     //chat nombreyapMasc;
      bool borrado;
 
 }
 
 struct Asistente
 {
-	char Asis[10];
 	char ContraseniAsis[10];
-	int DNIasis;
+	int DNIAsis;
 	char ApellyNomAsis[60];
 	char TelefonoAsis[25];	
 	bool borradoA;
 };
 
+int Menu() 
 
-void AgregarVeterinario(FILE *archi)  //ALTA
+{ 
+	int opcion = 0; 
+
+        system ( " cls " );
+	
+        printf ( " \n ---------------------------------------------------- \n");
+	printf ( "           VETERINARIA GAPUSAGA        ");
+	printf ( " \n ------------------------------------------------------ \n" );
+	printf("\n\t\t\t\t\t**********************************************************");
+	printf("\n\t\t\t\t\t\t**************  BIENVENIDO AL AREA ADMINISTRACIÓN  *******************\n");
+	printf("\t\t\t\t\t\t\t**********************************************************\n");
+	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Usuario Asistente \t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
+        printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Asistentes\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
+	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
+	scanf("%d", &opc); 
+	 
+	return opcion; 
+}
+
+
+void AgregarVeterinario(FILE *archi)  //ALTA DEL VETERINARIO
 {
 	Veterinario regi; //regi es la variable  de tipo struc
 	
@@ -61,9 +85,17 @@ void AgregarVeterinario(FILE *archi)  //ALTA
 	printf("Apellido y Nombre del Veterinario: ");
 	gets ( regi.ApellyNomVet);
 	
+	printf("DNI del Veterinario: ");
+	scanf("%d", &regi.DNIVet);
+	
+	printf("Telefono ");
+	gets(regi.TelefonoVet);
+	
 	regi.borrado= false;
 	
 	fseek (archi, 0, SEEK_END);
+        fwrite (&regi, sizeof(regi), 1, archi);
+	//confirmacion
 }
 
 void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
@@ -81,7 +113,7 @@ void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 
 }
 
-void ListarVeterinario(FILE *archi)
+void ListarVeterinario(FILE *archi)  //LISTAR VETERINARIO
 {
 	Veterinario regi;
 	
@@ -103,7 +135,15 @@ void ListarVeterinario(FILE *archi)
 		
 		if (regi.borrado == false)
 		{
+		   	printf("\nNro de Matricula: %d", regi.ContraseniaVet);
+			printf("\nApellido y Nombre del Veterinario: %s", regi.ApellyNomVet);
+			printf("\nNro de DNI: %d", regi.DNIVet);
+			printf("\nTelefono: %s", regi.TelefonoVet);
+			
 		}
+		
+		// Paso 5 - Intentar extraer EL SIGUIENTE registro del archivo
+		fread(&regi, sizeof(regi), 1, archi);
 	}
 }
 
@@ -120,32 +160,6 @@ void ListarAsistente(FILE *archiv)
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
 int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
 
-int Menu() 
-
-{ 
-	int opc = 0; 
-
-        system ( " cls " );
-	
-        printf ( " \n ---------------------------------------------------- \ n " );
-	printf ( "           VETERINARIA GAPUSAGA        " );
-	printf ( " \n ------------------------------------------------------ \ n " );
-	printf("\n\t\t\t\t\t**********************************************************");
-	printf("\n\t\t\t\t\t\t**************  BIENVENIDO AL AREA ADMINISTRACIÓN  *******************\n");
-	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\t\t\t\t\t\t\t**\n 1 - Registrar Veterinario \t\t\t\\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Usuario Asistente \t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
-        printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Asistentes\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
-	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
-	scanf("%d", &opc); 
-	 
-	return opc; 
-}
 
 }
 
