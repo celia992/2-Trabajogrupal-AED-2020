@@ -69,9 +69,53 @@ void AgregarVeterinario(FILE *archi)  //ALTA
 void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 {
 	Asistente registro; //regi es la variable  de tipo struc
+		printf("DNI del Asistente: ");
+	scanf("%d", &registro.DNIAsis);
+	
+	printf("Contraseña  del Asistente: ");
+	_flushall();
+	gets ( registro.ContraseniAsis);
+	
+	printf("Apellido y Nombre del Asistente: ");
+	gets ( registro.ApellyNomAsis);
 
 }
 
+void ListarVeterinario(FILE *archi)
+{
+	Veterinario regi;
+	
+	//Paso 1 - Rebobinar el archivo
+	rewind(archi);
+	//fseek(archi, 0, SEEK_SET);
+
+
+	//Paso 2 - Intentar extraer el primer registro del archivo
+	fread(&regi, sizeof(regi), 1, archi);
+	
+	//Paso 3 - Mientras no sea FIN DE ARCHIVO
+	while ( !feof(archi) )
+	
+	
+		//Paso 4 - Procesar / Gestionar el registro actual
+	{
+	
+		
+		if (regi.borrado == false)
+		{
+		}
+	}
+}
+
+
+void ListarAsistente(FILE *archiv)
+{
+	Asistente registro;
+	
+	//Paso 1 - Rebobinar el archivo
+	rewind(archiv);
+	//fseek(archi, 0, SEEK_SET);
+}
 
 void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
 int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
@@ -199,6 +243,13 @@ main()
             printf ("Listado de Veterinarios Registrados  ")
             break;
           }
+   case 6:
+	{
+	    printf("Ver Listado de Asistente\n");
+            ListarAsistente (archasistente);
+					
+		break;
+	  }
    case 0:
           {
             printf ("Cerrar la aplicacion");
