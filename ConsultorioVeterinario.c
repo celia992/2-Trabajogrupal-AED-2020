@@ -1,5 +1,4 @@
 #include<stdio.h> //puts , gets, scanf, printf, y otras funciones
-#include<conio.h> 
 #include<stdlib.h> //system(..) y otras funciones
 #include<string.h>
 # include "Clave.h" //Libreria para Contraseña
@@ -37,19 +36,6 @@ struct Mascota
 
 
 
-
-
-
-struct Mascota{
-	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
-	int Dni;
-	struct FechaNacimiento fech;
-	float Peso;
-}mascot;
-
-int opc=0,opp=0,j=0,i=0,band=0,acceso=0;
-char op;
-
 void ModuloConsultorio();
 void MenuPrincipal();
 void Menu();
@@ -58,113 +44,7 @@ void VisualizarTurnos(FILE*turnos);
 void RegistraEvolucion(FILE*turnos); 
 
 
-//Revisa aquí Belen porque tenés 2 veces lo mismo
-int main(){ 
-	do{
-		MenuPrincipal();
-		switch(opp){
-			case 1:{
-				ModuloConsultorio();
-			break;}
-			case 2:{
-				//ModAsistente();
-			break;}
-			case 3:{
-				//ModAdmin();
-   
-			break;}
-			case 4:{
-				//Mensaje de error;
-			break;}
-		}
-	}while(opp!=4);
-}
-void ModuloConsultorio(){
-	do{
-		Menu();
-		switch(opc){
-			case 1:{
-				char password[20],Matricula[20];
-				printf("\n Digite su numero de matricula: ");scanf("%d",&Matricula);
-				_flushall();
-				printf("\n Digite su password: ");gets(password); //PASSWORD ES LA CONTRASEÑA 
 
-			break;}
-			case 2:{
-				if(acceso==1){
-					VisualizarTurnos(turnos);	
-				}else{
-					system("cls");
-					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
-					system("pause");
-				}
-			break;}
-			case 3:{
-				if(acceso==1){
-					RegistraEvolucion(turnos);
-				}else{
-					system("cls");
-					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
-					system("pause");
-				}
-			break;}
-			case 4:{
-				if(acceso==1){
-					system("cls");
-					printf("\n Aplicacion finalizada");
-				}else{
-					system("cls");
-					printf("\n Acceso denagado... Antes debe iniciar sesion\n\n");
-					system("pause");
-				}
-			break;}
-			default:{
-				system("cls");
-				printf("\n Se produjo un error solo debe ingresar las opciones que aparecen en el menu\n\n");
-				system("pause");
-			break;}
-		}
-	}while(opc!=4);
-}
-void VerListaTurnos(FILE*turnos){
-	rewind(turnos);
-	turnos=fopen("Turnos.dat","r+b");
-	fread(&tur,sizeof(Turnos),1,turnos);
-	while(!feof(turnos)){
-		printf("\n Turno %d",j+1);
-		printf("\n Matricula: %d",tur.MatriculaVet);
-		printf("\n Fecha actual: %d/%d/%d",tur.fecha.dd,tur.fecha.mm,tur.fecha.aa);
-		printf("\n Dni: %d",tur.dni);
-		j++;
-		fread(&tur,sizeof(Turnos),1,turnos);	
-	}
-	fclose(turnos);
-	getch();
-	cadena pass;
-	
-do{
-		printf("ingrese una password valido: ");
-		_flushall();
-		gets(pass);			
-	}
-while(!validarPass(pass));	
-	printf("pass Valido!");
-}
-
-//Para validar , estamos trabajando en esto
-
-//"dA122dAoPFmk"
-
-bool validarPass(cadena pass){
-	int may = 0, min = 0, num = 0, otros = 0, numcons = 0;
-	
-	for(int i=0; i<strlen(pass); i++){
-		if (pass[i] >='A' && pass[i] <='Z'){
-			may++;
-			numcons = 0;		
-		}
-	}
-}
 void RegistraEvolucion(FILE*turnos){
 	char NombreA[20],evolucion[380];
 	system("cls");
@@ -219,24 +99,100 @@ void Menu(){
 
 	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
 	system("cls");	
+	
+	printf("\n------------------------------------\n");
+	printf("        VETERINARIA  GAPUSAGA        ");
+	printf("\n------------------------------------\n")
 	printf("\n\t\t\t\t\t\t\t*********************************************************");
 	printf("\n\t\t\t\t\t\t\t**********Modulo Consultorio Veterinario*****************\n");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 2 - Visualizar Lista de Espera de Turnos\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 3 - Registrar Evolución de la Mascota\t\t\t\t\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\t 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 2 - Visualizar Lista de Espera de Turnos\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 3 - Registrar Evolución de la Mascota\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
 	scanf("%d", &opc);
 }
-void MenuPrincipal(){
-	system("color 5");
-	system("cls");
-	printf("   Menu principal"); 
- 	printf("\n 1 - Modulo consultorio");               
-	printf("\n 2 - Modulo asistente");              
-	printf("\n 3 - Modulo administracion");
- 	printf("\n 4 - Cerrar la aplicacion");
- 	printf("\n\n Ingrese una opcion: ");scanf("%d",&opp);
+
+
+
+
+
+
+
+
+
+
+main()
+{
+	FILE *archTurno;
+	
+	archTurno = fopen("Turnos.dat", "r+b");
+	
+	int opc = 0;
+	do 
+	{
+		
+		system("cls");
+		opc = Menu();
+		system("cls");
+		
+		switch ( opc )
+		{
+			
+			case 1:
+				{
+					printf("Iniciar Sesion");
+				
+					break;
+				}
+
+			case 2:
+				{
+					printf("Visualizar lista de espera de Turnos\n\n");
+					ListarTurno (archTurno);
+					
+					break;
+				}
+
+			case 3:
+				{
+					printf("Registrar Evolucion de la Mascota\n");
+					
+					
+					break;
+				}
+
+			case 4:
+				{
+					printf("Cerrar la aplicacion\n");
+
+					
+					break;
+				}
+
+
+			case 0:
+				{
+					printf("Fin del programa...");
+					break;
+				}
+
+			default:
+				{
+					printf("Opcion incorrecta...");
+					break;
+				}
+
+			
+		}; // switch
+			
+		printf("\n\n");
+		system("pause");
+		
+	} while ( opc != 0);
+	
+	
 }
+
