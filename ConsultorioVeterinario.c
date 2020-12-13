@@ -4,32 +4,42 @@
 #include<string.h>
 # include "Clave.h" //Libreria para Contraseña
 
-typedef char cadena[80];.  // Define un nuevo tipo de dato
+//typedef char cadena[80];.  // Define un nuevo tipo de dato
 
-
-bool validarPass(cadena pass); //para la validación de la contraseña, ya veremos
-bool validarConsecutivasPass(cadena pass);
-
-FILE*turnos;
-FILE*mascotas;
 
 //Esta parte es la structura del Modulo consultorio P.B
 
-struct Fecha{
-	int dd,mm,aa;
-}fecha;
-struct turnos{
+struct Fecha  
+{
+	int dd;
+	int mm;
+	int aaaa;
+	
+};
+
+struct turnos{                          // En Proceso 
 	int MatriculaVet,dni;
 	struct Fecha fecha;
 	char DetAt[380];
-}tur;
-struct Consultorio{
-	char ApellidoNombre[60],Telefono[25];
-        int Matricula,Dni;
-}cons;
-struct FechaNacimiento{
-	int dd,mm,aa;
-}fech;
+};
+
+
+struct Mascota 
+{
+    char ApellyNomMascot[60];
+	int DNIDueno;
+	char TelefonoMascota[25];
+	char Localidad[60];
+	Fecha Nacimiento;
+	float PesoMascot;
+	bool borradoM;
+};
+
+
+
+
+
+
 struct Mascota{
 	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
 	int Dni;
