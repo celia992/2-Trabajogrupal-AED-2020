@@ -6,14 +6,14 @@
 
 typedef char cadena[32];
 
-bool validarPass(cadena pass);
-bool validarConsecutivasPass(cadena pass);
+bool validarContrasenia(cadena ContraseniaVet);
+bool validarConsecutivasContrasenia(cadena ContraseniaVet);
 bool validarContraseniaA(cadena ContraseniAsis);
 bool validarConsecutivasContraseniaA(cadena ContraseniAsis);
 bool validarUsuario(cadena );
 
 //main(){
-	cadena pass;
+	/*cadena pass;
 	
 	do{
 		printf("ingrese una password valido: ");
@@ -22,23 +22,22 @@ bool validarUsuario(cadena );
 	}while(!validarPass(pass));
 	
 	printf("pass Valido!");
-}
+}*/
 
-//"dA122dAoPFmk"
-
-bool validarPass(cadena pass){
+bool validarContrasnia(cadena ContraseniaVet)
+{
 	int may = 0, min = 0, num = 0, otros = 0, numcons = 0;
 	
-	for(int i=0; i<strlen(pass); i++){
-		if (pass[i] >='A' && pass[i] <='Z'){
+	for(int i=0; i<strlen(ContraseniaVet); i++){
+		if (ContraseniaVet[i] >='A' && ContraseniaVet[i] <='Z'){
 			may++;
 			numcons = 0;		
 		} 
-		else if (pass[i] >='a' && pass[i] <='z'){
+		else if (ContraseniaVet[i] >='a' && ContraseniaVet[i] <='z'){
 				 min++;
 				 numcons = 0;
 			 }
-			 else if (pass[i] >= '0' && pass[i] <='9'){
+			 else if (ContraseniaVet[i] >= '0' && ContraseniaVet[i] <='9'){
 			 	num++;
 				numcons++;	
 			    }
@@ -46,24 +45,24 @@ bool validarPass(cadena pass){
 		if (numcons == 4) break;
 	}
 	
-		return may>=1 && 
+	return may>=1 && 
 		   min>=1 && 
 		   num>=1 && 
 		   otros==0 && 
-	       strlen(pass)>=6 && 
-		   strlen(pass)<=32 && 
+	       strlen(ContraseniaVet)>=6 && 
+		   strlen(ContraseniaVet)<=32 && 
 		   numcons<=3 && 
-		   validarConsecutivasPass(pass);
+		   validarConsecutivasContrasenia(ContraseniaVet);
 }
 
-bool validarConsecutivasPass(cadena pass){
+bool validarConsecutivasContrasenia(cadena ContraseniaVet){
 	int letrasCons = 1;
 	
-	strlwr(pass);
+	strlwr(ContraseniaVet);
 	//aBuel123
-	for(int i=0; i<strlen(pass); i++){
-		if (pass[i] >='a' && pass[i] <='z'){
-			if(i>0 && pass[i-1]>'9' && pass[i]==pass[i-1]+1) letrasCons++;
+	for(int i=0; i<strlen(ContraseniaVet); i++){
+		if (ContraseniaVet[i] >='a' && ContraseniaVet[i] <='z'){
+			if(i>0 && ContraseniaVet[i-1]>'9' && ContraseniaVet[i]==ContraseniaVet[i-1]+1) letrasCons++;
 			//else letrasCons = 0;			
 		}
 		
@@ -71,6 +70,7 @@ bool validarConsecutivasPass(cadena pass){
 	}	
 	return letrasCons < 2;
 }
+
 
 
 // valicación de Asistente
