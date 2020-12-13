@@ -1,18 +1,7 @@
 #include <stdio.h>    //puts, scanf, printf, y otras funciones
 #include <stdlib.h>   //sytem(..) y otras funciones 
 #include <string.h>   //strcpy, strlwr, stren, strcat, strcat y otras funciones 
-# include "Clave.h" //Libreria para Contraseña
-
-
-
-/*---Define un nuevo tipo de dato. De tipo global, asi se utiliza en todas las funciones que la necesite*/
-
-typedef char cadena[80]; //Define un vector de 80. Almacena apellido y nombre.
-	
-bool validarPass(cadena pass);
-
-bool validarConsecutivasPass(cadena pass);
-
+#include "Clave.h" //Libreria para Contraseña
 
 
 struct Fecha
@@ -42,6 +31,14 @@ struct Asistente
 	char TelefonoAsis[25];	
 	bool borradoA;
 };
+
+
+int Menu();
+void AgregarVeterinario(FILE *archi);
+void AgregarAsistente(FILE *archiv);
+void ListarVeterinario(FILE *archi);
+void ListarAsistente(FILE *archiv);
+int CalcularTurnosMes(FILE *archi, int mes);
 
 int Menu() 
 
@@ -209,6 +206,7 @@ main()
 {
 	
 	FILE *archivo;
+	FILE *archasistente;
         
 	int opc = 0;
 	
@@ -230,8 +228,24 @@ main()
 		system("pause");
 	}
 	
+	archasistente = fopen("Asistente.dat", "r+b");
+	
+	if (archivo == NULL)
+	{
+		printf("El archivo no existe, se intentara crearlo...");
 		
-        }
+		archasistente = fopen("Asistente.dat", "w+b");
+		
+		if (archivo == NULL)
+		{
+			printf("Error. No se pudo crear el archivo...");
+			exit(1);
+		}
+		
+		printf("\nArchivo creado exitosamente...\n\n");
+		system("pause");
+	}	
+        
 
  
 
