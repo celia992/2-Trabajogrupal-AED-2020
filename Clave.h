@@ -8,6 +8,9 @@ typedef char cadena[32];
 
 bool validarPass(cadena pass);
 bool validarConsecutivasPass(cadena pass);
+bool validarContraseniaA(cadena ContraseniAsis);
+bool validarConsecutivasContraseniaA(cadena ContraseniAsis);
+bool validarUsuario(cadena );
 
 //main(){
 	cadena pass;
@@ -68,4 +71,56 @@ bool validarConsecutivasPass(cadena pass){
 	}	
 	return letrasCons < 2;
 }
+
+
+// valicación de Asistente
+
+bool validarContrasniaA(cadena ContraseniAsis)
+{
+	int may = 0, min = 0, num = 0, otros = 0, numcons = 0;
 	
+	for(int i=0; i<strlen(ContraseniAsis); i++){
+		if (ContraseniAsis[i] >='A' && ContraseniAsis[i] <='Z'){
+			may++;
+			numcons = 0;		
+		} 
+		else if (ContraseniAsis[i] >='a' && ContraseniAsis[i] <='z'){
+				 min++;
+				 numcons = 0;
+			 }
+			 else if (ContraseniAsis[i] >= '0' && ContraseniAsis[i] <='9'){
+			 	num++;
+				numcons++;	
+			    }
+			 	else otros++;
+		if (numcons == 4) break;
+	}
+	
+	return may>=1 && 
+		   min>=1 && 
+		   num>=1 && 
+		   otros==0 && 
+	       strlen(ContraseniAsis)>=6 && 
+		   strlen(ContraseniAsis)<=32 && 
+		   numcons<=3 && 
+		   validarConsecutivasContraseniaA(ContraseniAsis);
+}
+
+bool validarConsecutivasContraseniaA(cadena ContraseniAsis){
+	int letrasCons = 1;
+	
+	strlwr(ContraseniAsis);
+	//aBuel123
+	for(int i=0; i<strlen(ContraseniAsis); i++){
+		if ( ContraseniAsis[i] >='a' && ContraseniAsis[i] <='z'){
+			if(i>0 && ContraseniAsis[i-1]>'9' && ContraseniAsis[i]==ContraseniAsis[i-1]+1) letrasCons++;
+			//else letrasCons = 0;			
+		}
+		
+		if (letrasCons == 2) break;
+	}	
+	return letrasCons < 2;
+}
+
+
+
