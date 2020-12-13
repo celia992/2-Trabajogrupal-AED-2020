@@ -33,7 +33,7 @@ CASO BOTELLA
 
 Chicas
 
-∆ Trabajar en USUARIO y CONTRASEÑA
+∆ Trabajar en BAJA FÍSICA y BAJA LÓGICA
 
 
 BITÁCORA DEL PROYECTO
@@ -45,3 +45,7 @@ Reunión Grupal Zoom 11/12
 ✓Menu listo en los 3 módulos
 
 ✓ALTA de VETERINARIO y ASISTENTE
+
+✓LISTADO
+
+✓Validacion CONTRASEÑA
