@@ -41,11 +41,15 @@ struct Mascota
 	bool borradoM;
 };
 
-struct Turnos{
-	int MatriculaVet,dni; 
- 	struct Fecha fecha;   
-	char DetAt[380];
-}tur;
+struct Turno
+{
+	Veterinario Matricula;
+	Fecha Fech;
+	Mascota DNIdueno;
+	cadena DetAtencion;
+	bool borradoT;
+	
+};
 
 void RegistrarTurnos(FILE*turnos){
 	turnos=fopen("Turnos.dat","a+b");
