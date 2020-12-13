@@ -4,18 +4,25 @@
 # include "Clave.h" //Libreria para Contraseña
 
 
-typedef char cadena[80]; //cambio 32 por 80 que es el mayor tamaño de consola
+struct Fecha  
+{
+	int dd;
+	int mm;
+	int aaaa;
+	
+};
 
-bool validarPass(cadena pass); //para validar la contraseña, estamos trabajando en esto
+struct Veterinario
+{
+	int Matricula;
+	char ContraseniaVet[10];
+	char ApellyNomVet[60];
+	int DNIVet;
+	char TelefonoVet[25];
+	bool borrado;                 //borrado
+};
 
-bool validarConsecutivasPass(cadena pass);
 
-FILE*turnos;
-FILE*mascotas;
-
-struct Fecha{
-int dd,mm,aaaa;	
-}fecha;
 
 struct Historial
 {    
@@ -23,14 +30,16 @@ struct Historial
     Fecha FechTurno;
 };
 
-struct mascota{
-	char ApellidoNombre[60],Domicilio[60],Localidad[60],Telefono[25];
-	int DNIdueno;  //vuelvo a escribir DNIdueño porque en el programa apareceran también el DNI del veterinario, así diferenciamos.
-	struct FechaNacimiento fech;. // Revisemos esto de DNI para ver cuál es la forma más adecuada 
-	float Peso;
-	bool borradoA;
-	
-}mascot;
+struct Mascota 
+{
+    char ApellyNomMascot[60];
+	int DNIDueno;
+	char TelefonoMascota[25];
+	char Localidad[60];
+	Fecha Nacimiento;
+	float PesoMascot;
+	bool borradoM;
+};
 
 struct Turnos{
 	int MatriculaVet,dni; 
