@@ -38,14 +38,14 @@ struct Mascota
 
 void ModuloConsultorio();
 void MenuPrincipal();
-void Menu();
+int Menu();
 void RegistrarTurnos(FILE*turnos);
-void VisualizarTurnos(FILE*turnos);
+void ListarTurnos(FILE *archiT);
 void RegistraEvolucion(FILE*turnos); 
 
 
 
-void RegistraEvolucion(FILE*turnos){
+/*void RegistraEvolucion(FILE*turnos){
 	char NombreA[20],evolucion[380];
 	system("cls");
 	_flushall();
@@ -94,11 +94,18 @@ void VisualizarTurnos(FILE*turnos){
 	}
 	fclose(turnos);
 	getch();
-}											
-void Menu(){
+}	
 
-	system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
-	system("cls");	
+*/
+
+
+int Menu()
+{
+
+	//system("color 5"); //puse el color purpura o rosa para el programa se lo puede cambiar
+	//system("cls");	
+	
+	int opcion = 0;
 	
 	printf("\n------------------------------------\n");
 	printf("        VETERINARIA  GAPUSAGA        ");
@@ -112,9 +119,32 @@ void Menu(){
         printf("\n\t\t\t\t\t\t\t**\n 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
-	scanf("%d", &opc);
+	//scanf("%d", &opc);
+	
+	printf("\n0- Salir");//
+	printf("\n\nOpcion: ");
+	scanf("%d", &opcion);
+	
+	return opcion;
+	
 }
 
+void ListarTurno(FILE *archiT) //LISTAR TURNOS
+{
+	Turno regiTurno;
+	
+	//Paso 1 - Rebobinar el archivo
+	rewind(archiT);
+	//fseek(archi, 0, SEEK_SET);
+
+
+	//Paso 2 - Intentar extraer el primer registro del archivo
+	fread(&regiTurno, sizeof(regiTurno), 1, archiT);
+	
+	//Paso 3 - Mientras no sea FIN DE ARCHIVO
+	while ( !feof(archiT) )
+	
+	
 
 
 
