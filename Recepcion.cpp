@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h> 
+#include <stdio.h>  // puts, gets, scanf, printf y otras funciones
+#include <stdlib.h>  // system(..) y otras funciones.
 # include <string.h>
 # include "Clave.h" //Libreria para Contraseña
 
@@ -24,11 +24,12 @@ struct Veterinario
 
 
 
-struct Historial
+/*struct Historial
 {    
     char  Evolucion;
     Fecha FechTurno;
-};
+};                        */
+
 
 struct Mascota 
 {
@@ -51,14 +52,15 @@ struct Turno
 	
 };
 
-void RegistrarTurnos(FILE*turnos){
+/*void RegistrarTurnos(FILE*turnos){
 	turnos=fopen("Turnos.dat","a+b");
 	
-	
+*/	
 	
 	
 	
 int Menu()
+	
 {
 	int opcion = 0;
 
@@ -71,22 +73,24 @@ int Menu()
 	printf("presione una de las siguientes opciones para continuar");
 	printf("\n------------------------------------------------------\n");
 	
-	printf("\t\t\t\t\t\t\t**********************************************************\n");
+	//printf("\t\t\t\t\t\t\n**********************************************************\n");
 	
-	//printf("\n\t\t\t\t\t\t\t**\t 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	
-	printf("\n\t\t\t\t\t\t\t**\t 1 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\t 2 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\t 3-  Pago de Contado y a Credito");
-	printf("\n\t\t\t\t\t\t\t**\t 4 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\t 5 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 3 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 4-  Pago de Contado y a Credito");
+	printf("\n\t\t\t\t\t\t\t**\n 5 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
+        printf("\n\t\t\t\t\t\t\t**\n 0 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t************************************************************\n");
 	
 	scanf("%d", &opcion);
 	
 	return opcion;
 }
-void RegistrarMascotas(FILE*mascotas){
+
+
+
+/*void RegistrarMascotas(FILE *mascotas){
 	mascotas=fopen("Mascotas.dat","a+b");	
 	do{
 		system("cls");
@@ -175,6 +179,10 @@ void RegistrarTurno(FILE *archi)   // Camila, aquí ya te había realizado la in
 	
 	} while
 }
+
+
+
+*/
 
 main ()
 {
