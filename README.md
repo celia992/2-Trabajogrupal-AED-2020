@@ -27,6 +27,7 @@ Cada una puede crear , escribir principlmente en la parte  que le tocó, incluso
 Tambien puede colaborar y ayudar en otras partes , sin embargo TRATE EN LO POSIBLE DE NO BORRAR, haga comentarios pregunte por el grupo antes de borrar.
 
 MEDIOS DE COMUNICACIÓN
+
 Grupo de WhatsApp
 Por el github, en los comentarios que nos podemos dejar en algunas partes del código
 Publicaciones en el README
@@ -37,6 +38,8 @@ CASO BOTELLA
 Chicas
 
 ∆ Trabajar en BAJA FÍSICA y BAJA LÓGICA
+Chequear TURNOS
+Rechequear los  Casos de prueba
 
 
 BITÁCORA DEL PROYECTO
@@ -44,10 +47,12 @@ Reunión grupal Zoom 04/12
 Reunión grupal Zoom 06/12   
 Reunión Grupal Teams 10/12
 Reunión Grupal Zoom 11/12
+Clases de Consulta
+
 
 ✓Menu listo en los 3 módulos
 
-✓ALTA de VETERINARIO y ASISTENTE
+✓ALTA de, MASCOTA, VETERINARIO y ASISTENTE
 
 ✓LISTADO
 
