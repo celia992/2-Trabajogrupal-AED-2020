@@ -243,7 +243,24 @@ void ListarAsistente(FILE *archiv)
 	rewind (archiT); //Paso 1 rebobinar el archivo
 	
 	fread(&regiTurno, sizeof(regiTurno), 1, archiT);   //Paso 2  - intentar extraer el primer registro del archivo
-
+	
+	while (!feof(archiT))   //Paso 3  -  mientras no sea FIN DE ARCHIVO 
+	{
+		if (regiTurno.borradoT == false)   // Paso 4 -  procesar / gestionar el registro actual
+		{
+		    if (regiTurno.Fech.mm == TurnoMes)	
+		    {
+		    	total = total + regiTurno.Matricula;
+			}
+		}
+		
+        fread(&regiTurno, sizeof(regiTurno), 1, archiT);  //paso 5 intenta extraer el siguiente registro del archivo
+		fclose(archT);
+	}	
+	
+	return total;
+	
+}*/
 
 
 
@@ -253,30 +270,6 @@ void ListarAsistente(FILE *archiv)
 
 }
 
-float CalcularTurnosMes(File*arch, int mesTarget) //para hacer el Ranking
-{
-    float total = 0.0
-
-    Registro regi;
-
-    rewind(archi); //Paso 1 Rebobinar el archivo
-
-    fread(&regi, sizeof(regi), 1, archi); // Paso 2 Intentar extraer el primer registro de archivo
-
- while (!feof(archi)) //Paso 3 mientras no sea FIN DE ARCHIVO
-{
-     if (regi.borrado == false) //Paso 4 - Procesar /  Gestionar el registro actual
-      { 
-        if (regi.fechaTurno.mm== mesTarget)
-         {
-           total = total + regi.importeFactura;
-         }
-      }
-
-      fread (&regi, sizeof(regi), 1, archi); Paso 5 intentar extraer el SIGUIENTE registro de archivo
-}
-
-*/
 
 main()
 
@@ -288,6 +281,7 @@ main()
         
 	int opc = 0;
 	int mes = 0;
+	int TotalTurnoMes = 0;
 	
 	archivo = fopen("Veterinario.dat", "r+b");
 		
@@ -337,7 +331,8 @@ archTurno = fopen("Turnos.dat", "rb");
   
   do
   {
-    system ("cls");
+	  
+    system ("cls");                 //borrar pantalla
     opc = menu ();
     system ("cls");
     
@@ -354,23 +349,38 @@ archTurno = fopen("Turnos.dat", "rb");
    case 2:
           {
             printf ("Registrar Usuario Asistente");
+            AgregarAsistente (archasistente);
+		  
             break;
           }
     
    case 3:
           {
-            printf ("Atencion por Veterinarios");
-            break;
+            printf ("EN PROCESO\n");
+            printf ("La sección a la que el usuario quiere acceder se encuentra \n");
+            printf("FUERA DE SERVICIO\n");
+		  
+           break;
           }
    case 4:
           {
-            printf ("Ranking de Veterinario por Atenciones")
+           printf ("Ranking de Veterinario por Atenciones")
+           printf("Mes: ");
+           scanf("%d", &mes);
+                    
+                   // TotalTurnoMes = CalcularTurnosMes(archTurno, mes);
+                    
+                   // printf("\n total turno del mes %d;  %d", mes, TotalTurnoMes);
+                    
+		   
             break;
           }
    case 5:
           {
             printf ("Listado de Veterinarios Registrados  ")
-            break;
+            ListarVeterinario (archivo);
+		 
+           break;
           }
    case 6:
 	{
@@ -381,42 +391,20 @@ archTurno = fopen("Turnos.dat", "rb");
 	  }
    case 0:
           {
-            printf ("Cerrar la aplicacion");
+            printf ("Fin del programa...");
             break;
           }
    default:
           {
-            printf ("Opcion incorrecta")
+            printf ("Opcion incorrecta...")
             break;
           }
+	    
 }; // Switch
        printf("\n\n");
        system("pause");
 }
   while(opc !=0);
 
-
-{
-	cadena pass;
 	
-do{
-		printf("ingrese una password valido: ");
-		_flushall();
-		gets(pass);			
-	}
-while(!validarPass(pass));	
-	printf("pass Valido!");
-}
-
-//"dA122dAoPFmk"
-
-bool validarPass(cadena pass){
-	int may = 0, min = 0, num = 0, otros = 0, numcons = 0;
-	
-	for(int i=0; i<strlen(pass); i++){
-		if (pass[i] >='A' && pass[i] <='Z'){
-			may++;
-			numcons = 0;		
-		}
-	}
 }
