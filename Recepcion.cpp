@@ -32,6 +32,7 @@ struct Veterinario
 
 
 struct Mascota 
+	
 {
     char ApellyNomMascot[60];
 	int DNIDueno;
@@ -43,6 +44,7 @@ struct Mascota
 };
 
 struct Turno
+	
 {
 	Veterinario Matricula;
 	Fecha Fech;
@@ -78,9 +80,10 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 1 - Iniciar Sesion\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 2 - Registrar Mascota\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 3 - Registrar Turno \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\n 4-  Pago de Contado y a Credito");
-	printf("\n\t\t\t\t\t\t\t**\n 5 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
-        printf("\n\t\t\t\t\t\t\t**\n 0 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
+       // printf("\n\t\t\t\t\t\t\t**\n 00-  Pago de Contado y a Credito");
+	printf("\n\t\t\t\t\t\t\t**\n 4 - Listado de Atenciones por Veterinario y Fecha\t\t**\t");
+        printf("\n5- Listado de Mascotas Registradas");
+	printf("\n\t\t\t\t\t\t\t**\n 0 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t************************************************************\n");
 	
 	scanf("%d", &opcion);
@@ -183,6 +186,81 @@ void RegistrarTurno(FILE *archi)   // Camila, aquí ya te había realizado la in
 
 
 */
+
+
+void AgregarMascota(FILE *archi)  //ALTA DE LA MASCOTA
+{
+	Mascota regiMascot; //regi es la variable  de tipo struc
+	
+	printf("Apellido y Nombre de Mascota: \n");
+    _flushall();
+	gets( regiMascot.ApellyNomMascot);
+	
+	printf("DNI del Dueño de la mascota:  ");
+	scanf ("%d", &regiMascot.DNIDueno);
+	printf("Domicilio de la Mascota:  \n");
+	
+	_flushall();
+	gets ( regiMascot.Localidad);
+	
+	printf("Fecha de Nacimiento de la mascota: \n");
+	
+	printf("dd:  ");
+	scanf("%d", &regiMascot.Nacimiento.dd);
+
+        printf("mm:  ");
+	scanf("%d", &regiMascot.Nacimiento.mm);
+	
+	printf("aaaa:  ");
+	scanf("%d", &regiMascot.Nacimiento.aaaa);
+	
+	printf("Peso de la mascota ");
+	scanf("%f" , &regiMascot.PesoMascot);
+	
+	/*printf("Edad de la mascota ");  trabajar este algoritmo mas adelante para que me saque la edad
+	scanf("%f" , &regiMascot.);*/
+	
+	printf("Telefono \n");
+	_flushall();
+	gets(regiMascot.TelefonoMascota);
+	
+	regiMascot.borradoM= false;
+	
+	fseek (archi, 0, SEEK_END);
+	fwrite (&regiMascot, sizeof(regiMascot), 1, archi);
+	//confirmacion
+}
+
+
+void ListarMascota(FILE *archiM) //LISTAR MASCOTA
+{
+	Mascota regiMascot;
+	
+	//Paso 1 - Rebobinar el archivo
+	rewind(archiM);
+	//fseek(archi, 0, SEEK_SET);
+
+	
+void AgregarTurno(FILE *archiT)  //ALTA DE  TURNO
+{
+
+	Turno regiTurno; //regi es la variable  de tipo struc
+	
+	printf("MATRICULA del Veterinario ");
+	scanf("%d", &regiTurno.Matricula);
+	
+	printf("Fecha de atencion: ");
+	_flushall();
+	
+	printf("dd:  ");
+	scanf("%d", &regiTurno.Fech.dd);
+
+        printf("mm:  ");
+	scanf("%d", &regiTurno.Fech.mm);	
+	
+	
+
+
 
 main ()
 {
