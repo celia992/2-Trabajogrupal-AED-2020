@@ -6,7 +6,7 @@
 //typedef char cadena[80];.  // Define un nuevo tipo de dato
 
 
-//Esta parte es la structura del Modulo consultorio P.B
+//Esta parte es la structura del Modulo consultorio 
 
 struct Fecha  
 {
@@ -16,12 +16,17 @@ struct Fecha
 	
 };
 
-struct turnos{                          // En Proceso 
-	int MatriculaVet,dni;
-	struct Fecha fecha;
-	char DetAt[380];
-};
 
+
+struct Veterinario
+{
+	int Matricula;
+	char ContraseniaVet[10];
+	char ApellyNomVet[60];
+	int DNIVet;
+	char TelefonoVet[25];
+	bool borrado;                 //borrado
+};
 
 struct Mascota 
 {
@@ -35,6 +40,11 @@ struct Mascota
 };
 
 
+struct turnos{                          // En Proceso 
+	int MatriculaVet,dni;
+	struct Fecha fecha;
+	char DetAt[380];
+};
 
 void ModuloConsultorio();
 void MenuPrincipal();
