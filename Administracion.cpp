@@ -4,7 +4,7 @@
 #include "Clave.h" //Libreria para Contraseña
 
 
-struct Fecha
+struct Fecha            // LA ESTRUCTURA 
 {
 	int dd;
 	int mm;
@@ -32,6 +32,14 @@ struct Asistente
 	bool borradoA;
 };
 
+struct Turno
+{
+	Veterinario Matricula;
+	Fecha Fech;
+	Mascota DNIdueno;
+	bool borradoT;
+};    
+  
 
 int Menu();
 void AgregarVeterinario(FILE *archi);
@@ -39,6 +47,8 @@ void AgregarAsistente(FILE *archiv);
 void ListarVeterinario(FILE *archi);
 void ListarAsistente(FILE *archiv);
 int CalcularTurnosMes(FILE *archi, int mes);
+
+
 
 int Menu() 
 
@@ -58,8 +68,8 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 3 - Atenciones por Veterinarios\t\t\t\t\t\tt\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
         printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Asistentes\t\t\t\t**\t");
-	printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 6 - Ver el listado de los Asistentes\t\t\t\t**\t");
+	//printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
 	scanf("%d", &opc); 
@@ -67,17 +77,22 @@ int Menu()
 	return opcion; 
 }
 
+  
+    //                                         ALTA DEL VETERINARIO
 
-void AgregarVeterinario(FILE *archi)  //ALTA DEL VETERINARIO
+void AgregarVeterinario(FILE *archi)  //
 {
 	Veterinario regi; //regi es la variable  de tipo struc
 	
 	printf("MATRICULA del Veterinario: ");
 	scanf("%d", &regi.Matricula);
 	
+	 do{
+	
 	printf("Contraseña  del Veterinario: ");
 	_flushall();
 	gets ( regi.ContraseniaVet);
+        } while(!validarContrasnia(regi.ContraseniaVet));
 	
 	printf("Apellido y Nombre del Veterinario: ");
 	gets ( regi.ApellyNomVet);
@@ -85,6 +100,7 @@ void AgregarVeterinario(FILE *archi)  //ALTA DEL VETERINARIO
 	printf("DNI del Veterinario: ");
 	scanf("%d", &regi.DNIVet);
 	
+	_flushall();
 	printf("Telefono ");
 	gets(regi.TelefonoVet);
 	
@@ -94,6 +110,8 @@ void AgregarVeterinario(FILE *archi)  //ALTA DEL VETERINARIO
         fwrite (&regi, sizeof(regi), 1, archi);
 	//confirmacion
 }
+
+
 
 void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 {
