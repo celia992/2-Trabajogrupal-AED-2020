@@ -46,10 +46,9 @@ struct turnos{                          // En Proceso
 	char DetAt[380];
 };
 
-void ModuloConsultorio();
-void MenuPrincipal();
+//void ModuloConsultorio();
 int Menu();
-void RegistrarTurnos(FILE*turnos);
+//void RegistrarTurnos(FILE*turnos);
 void ListarTurnos(FILE *archiT);
 void RegistraEvolucion(FILE*turnos); 
 
