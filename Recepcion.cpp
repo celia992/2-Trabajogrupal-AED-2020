@@ -241,6 +241,40 @@ void ListarMascota(FILE *archiM) //LISTAR MASCOTA
 	//fseek(archi, 0, SEEK_SET);
 
 	
+	//Paso 2 - Intentar extraer el primer registro del archivo
+	fread(&regiMascot, sizeof(regiMascot), 1, archiM);
+	
+	//Paso 3 - Mientras no sea FIN DE ARCHIVO
+	while ( !feof(archiM) )
+	
+	
+		//Paso 4 - Procesar / Gestionar el registro actual
+	{
+		
+		if (regiMascot.borradoM == false)
+		//if (!regi.borrado)
+		{
+			
+			printf("\n  DATOS DE LA MASCOTA   \n");
+			printf("\nApellido y Nombre %s", regiMascot.ApellyNomMascot);
+			printf("\nFecha de Nacimiento : %d/%d/%d\n\n", regiMascot.Nacimiento.dd, regiMascot.Nacimiento.mm, regiMascot.Nacimiento.aaaa);
+			printf("\nNro de DNI del Dueno: %d", regiMascot.DNIDueno);
+			printf("\nLocalidad : %s", regiMascot.Localidad);
+			printf("\nTelefono del Dueno de la Mascota: %s", regiMascot.TelefonoMascota);
+			printf("\nPeso: %f", regiMascot.ApellyNomMascot);
+			
+		}
+		
+		
+		// Paso 5 - Intentar extraer EL SIGUIENTE registro del archivo
+		fread(&regiMascot, sizeof(regiMascot), 1, archiM);
+		
+	} 
+	
+}
+
+
+	
 void AgregarTurno(FILE *archiT)  //ALTA DE  TURNO
 {
 
@@ -258,12 +292,51 @@ void AgregarTurno(FILE *archiT)  //ALTA DE  TURNO
         printf("mm:  ");
 	scanf("%d", &regiTurno.Fech.mm);	
 	
+	printf("aaaa:  ");
+	scanf("%d", &regiTurno.Fech.aaaa);
 	
+	//printf("Apellido y Nombre del Veterinario: ");  trabajar luego para ver si se ve el veterinario
+	//gets (regiTurno.);                               ademas de su matricula
+	
+	printf("DNI del dueno de la Mascota: ");
+	scanf("%d", &regiTurno.DNIdueno);
+	
+	regiTurno.borradoT= false;
+	
+	fseek (archiT, 0, SEEK_END);
+	fwrite (&regiTurno, sizeof(regiTurno), 1, archiT);
+	//confirmacion
+}
+
+
 
 
 
 main ()
 {
+    	FILE *archMascota;
+	FILE *archTurno;
+	
+	archMascota = fopen("Mascota.dat", "r+b");
+	
+	if (archMascota == NULL)
+	{
+		printf("El archivo no existe, se intentara crearlo...");
+		
+		archMascota = fopen("Mascota.dat", "w+b");
+		
+		if (archMascota == NULL)
+		{
+			printf("Error. No se pudo crear el archivo...");
+			exit(1);
+		}
+		
+		printf("\nArchivo creado exitosamente...\n\n");
+		system("pause");
+	}
+	
+	
+	
   int opc = 0;
   do
   {
@@ -275,18 +348,24 @@ main ()
     { 
     case 1:
           {
-            printf ("Iniciar Sesion");
+            printf "EN PROCESO...");
+	   
+		  
             break;
           }
    case 2:
           {
             printf ("Registrar Mascota");
+	     AgregarMascota (archMascota); 
+		  
             break;
           }
     
    case 3:
           {
             printf ("Registrar Turno");
+	    AgregarTurno (archTurno);	  
+		  
             break;
           }
    case 4:
@@ -294,6 +373,13 @@ main ()
             printf ("Listado de atenciones por Veterinario y fecha")
             break;
           }
+   case 5:
+	 {
+	    printf("Listado de atenciones de Mascotas Registradas\n");
+
+	    ListarMascota (archMascota);
+	    break;
+	  } 
    case 0:
           {
             printf ("Cerrar la aplicacion");
@@ -301,7 +387,7 @@ main ()
           }
    default:
           {
-            printf ("Opcion incorrecta")
+            printf ("Opcion incorrecta...")
             break;
           }
    }; // Switch
@@ -310,6 +396,7 @@ main ()
    system( opc != 0);
 
   } while (opc != 0);
+	
 }
 
 	
