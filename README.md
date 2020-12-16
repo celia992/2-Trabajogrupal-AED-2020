@@ -15,7 +15,10 @@ Dividimos el proyecto en partes
 Consultorio  está a cargo de Belén
 Recepción a Cargo de  Camila
 Administración a cargo de Olga
-Todos los Menú , gestión de autenticación de usuari a cargo de Celia
+Todos los Menú , gestión de autenticación de usuario a cargo de Celia
+
+Según fue avanzando el proyecto, al cual necesariamente para poder contrstruirlo, se necesitaron ciertos pasos antes de poder hacer otros
+Si bien hubo una división de tareas al principio para hacer el desarrollo más práctico, era imposible hacer una autenticación de usuario sin antes hacer un alta de usuario, en la distribución hubo que hacer ajustes y enfocarse en lo que se necesitaba, de ahí que implementamos el CASO BOTELLA, para hacer las anotaciones ahí. y por esa razón a medida que se iba avanzando de forma segura en el código se iban haciendo los commits en Github. 
 
 
 NORMAS DE CONVIVENCIA PARA CREAR EL CÓDIGO EN ARMONÍA
