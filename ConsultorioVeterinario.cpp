@@ -127,11 +127,11 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 3 - Registrar Evolución de la Mascota\t\t\t\t\t\t**\t");
         printf("\n\t\t\t\t\t\t\t**\n 4 - Cerrar la aplicacion \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t**********************************************************\n");
-	printf("\n\n\t\t\t\t\t\t\t**\t - Ingrese una opcion: ");
+	printf("\n\n\t\t\t\t\t\t\t**\n\nIngrese una opcion: ");
 	//scanf("%d", &opc);
 	
 	printf("\n0- Salir");//
-	printf("\n\nOpcion: ");
+	//printf("\n\nOpcion: ");
 	scanf("%d", &opcion);
 	
 	return opcion;
