@@ -143,13 +143,28 @@ void ListarTurno(FILE *archiT) //LISTAR TURNOS
 	
 	//Paso 3 - Mientras no sea FIN DE ARCHIVO
 	while ( !feof(archiT) )
+		//Paso 4 - Procesar / Gestionar el registro actual
+	{
+		
+		if (regiTurno.borradoT == false)
+		//if (!regi.borrado)
+		{
+			
+			printf("\n  DATOS DEL TURNO   \n");
+			printf("\nMatricula del Veterinario %s", regiTurno.Matricula);
+			printf("\nFecha de Turno : %d/%d/%d\n\n", regiTurno.Fech.dd, regiTurno.Fech.mm, regiTurno.Fech.aaaa); 
+			printf("\nNro de DNI del Dueno: %d", regiTurno.DNIdueno);
+		//	printf("\nEvolución de la Mascota : %s", regiTurno.DetAtencion);
+			
+		}
+		
+		
+		// Paso 5 - Intentar extraer EL SIGUIENTE registro del archivo
+		fread(&regiTurno, sizeof(regiTurno), 1, archiT);
+		
+	} 
 	
-	
-
-
-
-
-
+}
 
 
 
@@ -159,6 +174,12 @@ main()
 	FILE *archTurno;
 	
 	archTurno = fopen("Turnos.dat", "r+b");
+	
+	if (archTurno == NULL)
+	{
+		printf("El archivo no existe, ...");
+	}
+	
 	
 	int opc = 0;
 	do 
@@ -173,7 +194,7 @@ main()
 			
 			case 1:
 				{
-					printf("Iniciar Sesion");
+					printf("En proceso...");
 				
 					break;
 				}
