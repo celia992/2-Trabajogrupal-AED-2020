@@ -234,7 +234,15 @@ void ListarAsistente(FILE *archiv)
 	
 }
 
-
+/*int CalcularTurnosMes(FILE *archiT, int TurnoMes)  //en proceso
+{
+	int total = 0;
+	
+	Turno regiTurno;
+	
+	rewind (archiT); //Paso 1 rebobinar el archivo
+	
+	fread(&regiTurno, sizeof(regiTurno), 1, archiT);   //Paso 2  - intentar extraer el primer registro del archivo
 
 
 
@@ -268,7 +276,7 @@ float CalcularTurnosMes(File*arch, int mesTarget) //para hacer el Ranking
       fread (&regi, sizeof(regi), 1, archi); Paso 5 intentar extraer el SIGUIENTE registro de archivo
 }
 
-
+*/
 
 main()
 
@@ -276,8 +284,10 @@ main()
 	
 	FILE *archivo;
 	FILE *archasistente;
+	FILE *archTurno;
         
 	int opc = 0;
+	int mes = 0;
 	
 	archivo = fopen("Veterinario.dat", "r+b");
 		
@@ -315,7 +325,13 @@ main()
 		system("pause");
 	}	
         
-
+archTurno = fopen("Turnos.dat", "rb");
+    	if (archivo == NULL)
+		{
+			printf("Error. No se pudo crear el archivo...");
+			exit(1);
+		}
+	
  
 
   
