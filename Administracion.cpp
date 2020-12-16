@@ -6,10 +6,23 @@
 
 struct Fecha            // LA ESTRUCTURA 
 {
-	int dd;
+	int dd;          //Con sus campos
 	int mm;
 	int aaaa;
 }
+
+struct Mascota 
+{
+    char ApellyNomMascot[60];
+	int DNIDueno;
+	char TelefonoMascota[25];
+	char Localidad[60];
+	Fecha Nacimiento;
+	float PesoMascot;
+	bool borradoM;                 //Campo extra para BAJA LOGICA. Actua como bandera
+	                               
+};
+
 
 struct Veterinario
 	
@@ -19,7 +32,7 @@ struct Veterinario
      int DNIVet;
      char ApellyNomVet[60];
      char TelefonoVet[25];
-     bool borrado;
+     bool borrado;                    //borrado
 
 }
 
@@ -69,10 +82,10 @@ int Menu()
 	printf("\n\t\t\t\t\t\t\t**\n 4 - Ranking de Veterinarios por Atenciones\t\t\t\t**\t"); 
         printf("\n\t\t\t\t\t\t\t**\n 5 - Ver el listado de los Veterinarios\t\t\t\t**\t");
 	printf("\n\t\t\t\t\t\t\t**\n 6 - Ver el listado de los Asistentes\t\t\t\t**\t");
-	//printf("\n\t\t\t\t\t\t\t**\n 6 - Cerrar la Aplicacion  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
+	printf("\n\t\t\t\t\t\t\t**\n 0 - Salir  \t\t\t\t\t\t\t\t\t\t\t\t**\t");
 	printf("\t\t\t\t\t\t\t\t***********************************************************\n");
 	printf("\n\n\t\t\t\t\t\t\t**\n - Ingrese el número de la opcion: ");
-	scanf("%d", &opc); 
+	scanf("%d", &opcion); 
 	 
 	return opcion; 
 }
@@ -80,7 +93,8 @@ int Menu()
   
     //                                         ALTA DEL VETERINARIO
 
-void AgregarVeterinario(FILE *archi)  //
+void AgregarVeterinario(FILE *archi)  //el parametro que recibe la función es archivo
+
 {
 	Veterinario regi; //regi es la variable  de tipo struc
 	
@@ -111,19 +125,24 @@ void AgregarVeterinario(FILE *archi)  //
 	//confirmacion
 }
 
+//                             ALTA DE ASISTENTE
 
-
-void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
+void AgregarAsistente(FILE *archiv)  
 {
 	Asistente registro; //regi es la variable  de tipo struc
 	
 	printf("DNI del Asistente: ");
 	scanf("%d", &registro.DNIAsis);
 	
+	
+	 do{
+	
 	printf("Contraseña  del Asistente: ");
 	_flushall();
 	gets ( registro.ContraseniAsis);
-	
+	} while(!validarContrasniaA(registro.ContraseniAsis));
+		 
+		 
 	printf("Apellido y Nombre del Asistente: ");
 	gets ( registro.ApellyNomAsis);
 	
@@ -138,7 +157,10 @@ void AgregarAsistente(FILE *archiv)  //ALTA DE ASISTENTE
 
 }
 
-void ListarVeterinario(FILE *archi)  //LISTAR VETERINARIO
+
+//                              LISTAR VETERINARIO
+
+void ListarVeterinario(FILE *archi)  
 {
 	Veterinario regi;
 	
@@ -185,11 +207,40 @@ void ListarAsistente(FILE *archiv)
 	
 	//Paso 3 - Mientras no sea FIN DE ARCHIVO
 	while ( !feof(archiv) )
+	 
+	
+	{
+	
+		//Paso 4 - Procesar / Gestionar el registro actual
+		
+		if (registro.borradoA == false)
+		//if (!regi.borrado)
+		{
+			
+			printf("\nNro de DNI: %d", registro.DNIAsis);
+		//	printf("\nNro de DNI: %s", registro.ContraseniAsis);
+			printf("\nApellido y Nombre del Asistente: %s", registro.ApellyNomAsis);
+			printf("\nTelefono: %s", registro.TelefonoAsis);
+			
+			
+		//	printf("\nFecha Venta: %d/%d/%d\n\n", regi.fechaVenta.dd, regi.fechaVenta.mm, regi.fechaVenta.aaaa);
+		}
+		
+		
+		// Paso 5 - Intentar extraer EL SIGUIENTE registro del archivo
+		fread(&registro, sizeof(registro), 1, archiv);
+		
+	} // while
 	
 }
 
-void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
-int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
+
+
+
+
+
+//void registrarTurnoMensual(FILE*arch1, int cantTurnos);  //Para registrar el turno mensual
+//int contarMayorQue(FILE*arch1);                          //Para hacer el Ranking
 
 
 }
